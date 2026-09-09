@@ -1,0 +1,43 @@
+# Python/cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments/builds
+.venv/
+venv/
+env/
+build/
+dist/
+*.egg-info/
+
+# Local configuration/secrets
+.env
+.env.*
+!.env.example
+
+# Experiment outputs: never commit raw training state
+runs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.log
+*.out
+*.err
+*.jsonl
+
+# Analysis scratch/large generated tables
+*_step_log.csv
+*_raw.csv
+*_summary.csv
+
+# IDE/OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

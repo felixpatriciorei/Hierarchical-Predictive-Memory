@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hierarchical-predictive-memory"
+version = "0.1.0"
+description = "Research prototype for routed local, recurrent, fast-weight, and episodic memory"
+readme = "README.md"
+requires-python = ">=3.12,<3.15"
+license = {file = "LICENSE"}
+authors = [{name = "Felix Patricio"}]
+dependencies = [
+  "torch>=2.10",
+  "numpy>=2.3",
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.1"]
+analysis = ["pandas>=2.2", "scipy>=1.17"]
+cloud = ["modal"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
+addopts = "-ra"

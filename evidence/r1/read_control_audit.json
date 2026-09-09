@@ -1,0 +1,119 @@
+{
+  "artifact_audit": {
+    "completed_metrics_count": 6,
+    "orphan_metrics_paths": [],
+    "selected_metrics_paths": [
+      "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_vectorized_replication\\20260821_141457_hpm_lite_v2_aliased_kv_seed20260850\\metrics.json",
+      "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_vectorized_replication\\20260821_141535_hpm_lite_v2_aliased_kv_seed20260850\\metrics.json",
+      "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_vectorized_replication\\20260821_141635_hpm_lite_v2_aliased_kv_seed20260851\\metrics.json",
+      "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_vectorized_replication\\20260821_141713_hpm_lite_v2_aliased_kv_seed20260851\\metrics.json",
+      "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_vectorized_replication\\20260821_141812_hpm_lite_v2_aliased_kv_seed20260852\\metrics.json",
+      "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_vectorized_replication\\20260821_141849_hpm_lite_v2_aliased_kv_seed20260852\\metrics.json"
+    ]
+  },
+  "audit_status": "pass",
+  "delta_ste_minus_hard": {
+    "eval_answer_ce": {
+      "maximum": -2.7848401129245755,
+      "mean": -3.375365957493583,
+      "median": -3.204890800267458,
+      "minimum": -4.136366959288716,
+      "positive_seed_count": 0,
+      "seed_count": 3
+    },
+    "eval_answer_exact": {
+      "maximum": 0.7515625,
+      "mean": 0.6791666666666667,
+      "median": 0.6515625,
+      "minimum": 0.634375,
+      "positive_seed_count": 3,
+      "seed_count": 3
+    },
+    "eval_retrieval_top1": {
+      "maximum": 0.7203125,
+      "mean": 0.6520833333333332,
+      "median": 0.621875,
+      "minimum": 0.6140625,
+      "positive_seed_count": 3,
+      "seed_count": 3
+    }
+  },
+  "interpretation": "proof_of_mechanism_only",
+  "per_seed": [
+    {
+      "delta_eval_answer_ce": -3.204890800267458,
+      "delta_eval_answer_exact": 0.6515625,
+      "delta_eval_retrieval_margin": 4.309438784047961,
+      "delta_eval_retrieval_top1": 0.621875,
+      "delta_train_wall_time_sec": 19.714776699998765,
+      "hard_eval_answer_ce": 5.558304309844971,
+      "hard_eval_answer_exact": 0.140625,
+      "hard_eval_retrieval_margin": -3.2937498539686203,
+      "hard_eval_retrieval_top1": 0.1734375,
+      "hard_train_wall_time_sec": 37.8908248000007,
+      "pretrain_retrieval_ceiling": 0.5,
+      "pretrain_retrieval_top1": 0.24375,
+      "seed": 20260850,
+      "ste_eval_answer_ce": 2.353413509577513,
+      "ste_eval_answer_exact": 0.7921875,
+      "ste_eval_retrieval_margin": 1.015688930079341,
+      "ste_eval_retrieval_top1": 0.7953125,
+      "ste_over_hard_wall_time_ratio": 1.5203047651788884,
+      "ste_train_wall_time_sec": 57.605601499999466
+    },
+    {
+      "delta_eval_answer_ce": -2.7848401129245755,
+      "delta_eval_answer_exact": 0.634375,
+      "delta_eval_retrieval_margin": 6.191620196402074,
+      "delta_eval_retrieval_top1": 0.6140625,
+      "delta_train_wall_time_sec": 19.46399089999977,
+      "hard_eval_answer_ce": 5.710055327415466,
+      "hard_eval_answer_exact": 0.0828125,
+      "hard_eval_retrieval_margin": -5.545079880952835,
+      "hard_eval_retrieval_top1": 0.109375,
+      "hard_train_wall_time_sec": 37.989628499999526,
+      "pretrain_retrieval_ceiling": 0.5,
+      "pretrain_retrieval_top1": 0.178125,
+      "seed": 20260851,
+      "ste_eval_answer_ce": 2.9252152144908905,
+      "ste_eval_answer_exact": 0.7171875,
+      "ste_eval_retrieval_margin": 0.6465403154492378,
+      "ste_eval_retrieval_top1": 0.7234375,
+      "ste_over_hard_wall_time_ratio": 1.5123501247189088,
+      "ste_train_wall_time_sec": 57.4536193999993
+    },
+    {
+      "delta_eval_answer_ce": -4.136366959288716,
+      "delta_eval_answer_exact": 0.7515625,
+      "delta_eval_retrieval_margin": 3.86059331074357,
+      "delta_eval_retrieval_top1": 0.7203125,
+      "delta_train_wall_time_sec": 20.127322999998796,
+      "hard_eval_answer_ce": 5.821399903297424,
+      "hard_eval_answer_exact": 0.1109375,
+      "hard_eval_retrieval_margin": -2.4587007820606233,
+      "hard_eval_retrieval_top1": 0.1421875,
+      "hard_train_wall_time_sec": 37.560214500001166,
+      "pretrain_retrieval_ceiling": 0.5,
+      "pretrain_retrieval_top1": 0.1578125,
+      "seed": 20260852,
+      "ste_eval_answer_ce": 1.685032944008708,
+      "ste_eval_answer_exact": 0.8625,
+      "ste_eval_retrieval_margin": 1.4018925286829471,
+      "ste_eval_retrieval_top1": 0.8625,
+      "ste_over_hard_wall_time_ratio": 1.5358681591128338,
+      "ste_train_wall_time_sec": 57.68753749999996
+    }
+  ],
+  "pretraining_retrieval_top1": {
+    "maximum": 0.24375,
+    "mean": 0.19322916666666667
+  },
+  "run_dir": "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_vectorized_replication",
+  "seed_count": 3,
+  "ste_over_hard_wall_time_ratio": {
+    "maximum": 1.5358681591128338,
+    "mean": 1.522841016336877,
+    "median": 1.5203047651788884,
+    "minimum": 1.5123501247189088
+  }
+}

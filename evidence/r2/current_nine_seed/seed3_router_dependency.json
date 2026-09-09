@@ -1,0 +1,191 @@
+{
+  "answer_position_router_weights": {
+    "copy": {
+      "episodic": 4.540356258075917e-06,
+      "fast_weight": 0.0005165163311176002,
+      "local": 4.199468094157055e-05,
+      "recurrent": 0.9994369745254517
+    },
+    "fact": {
+      "episodic": 0.6939517855644226,
+      "fast_weight": 0.24351441860198975,
+      "local": 0.002371357288211584,
+      "recurrent": 0.06016245111823082
+    },
+    "mood": {
+      "episodic": 0.023229075595736504,
+      "fast_weight": 0.7287227511405945,
+      "local": 0.21979974210262299,
+      "recurrent": 0.028248442336916924
+    },
+    "xref": {
+      "episodic": 0.38163578510284424,
+      "fast_weight": 0.5834627151489258,
+      "local": 0.0014145425520837307,
+      "recurrent": 0.03348694369196892
+    }
+  },
+  "batch_size": 32,
+  "batches": 5,
+  "condition_exact": {
+    "drop_episodic": {
+      "copy": 1.0,
+      "fact": 0.0,
+      "mood": 0.9375,
+      "xref": 0.5
+    },
+    "drop_fast_weight": {
+      "copy": 1.0,
+      "fact": 0.38125,
+      "mood": 0.5,
+      "xref": 0.175
+    },
+    "drop_fast_weight__episodic": {
+      "copy": 1.0,
+      "fact": 0.0,
+      "mood": 0.5,
+      "xref": 0.0
+    },
+    "drop_local": {
+      "copy": 1.0,
+      "fact": 0.38125,
+      "mood": 0.5,
+      "xref": 0.675
+    },
+    "drop_local__episodic": {
+      "copy": 1.0,
+      "fact": 0.00625,
+      "mood": 0.5,
+      "xref": 0.5
+    },
+    "drop_local__fast_weight": {
+      "copy": 1.0,
+      "fact": 0.38125,
+      "mood": 0.0,
+      "xref": 0.175
+    },
+    "drop_local__fast_weight__episodic": {
+      "copy": 1.0,
+      "fact": 0.0,
+      "mood": 0.0,
+      "xref": 0.0
+    },
+    "drop_local__recurrent": {
+      "copy": 0.0,
+      "fact": 0.38125,
+      "mood": 0.5,
+      "xref": 0.675
+    },
+    "drop_local__recurrent__episodic": {
+      "copy": 0.0,
+      "fact": 0.01875,
+      "mood": 0.5,
+      "xref": 0.5
+    },
+    "drop_local__recurrent__fast_weight": {
+      "copy": 0.0,
+      "fact": 0.38125,
+      "mood": 0.0,
+      "xref": 0.175
+    },
+    "drop_local__recurrent__fast_weight__episodic": {
+      "copy": 0.0,
+      "fact": 0.0,
+      "mood": 0.0,
+      "xref": 0.0
+    },
+    "drop_recurrent": {
+      "copy": 0.0,
+      "fact": 0.38125,
+      "mood": 0.9625,
+      "xref": 0.675
+    },
+    "drop_recurrent__episodic": {
+      "copy": 0.0,
+      "fact": 0.0,
+      "mood": 0.9375,
+      "xref": 0.5
+    },
+    "drop_recurrent__fast_weight": {
+      "copy": 0.0,
+      "fact": 0.38125,
+      "mood": 0.5,
+      "xref": 0.175
+    },
+    "drop_recurrent__fast_weight__episodic": {
+      "copy": 0.0,
+      "fact": 0.0,
+      "mood": 0.5,
+      "xref": 0.0
+    },
+    "full": {
+      "copy": 1.0,
+      "fact": 0.38125,
+      "mood": 0.9625,
+      "xref": 0.675
+    }
+  },
+  "diagnostic_kind": "fixed_router_post_gate_conditional_coablation",
+  "interpretation": "Router weights were captured from each unablated evaluation batch, then reused exactly while selected post-gate path contributions were zeroed without renormalization. Ablation effects are functional evidence under the frozen gate, not proof of independent paths.",
+  "model": "hpm_lite_v2",
+  "path_names": [
+    "local",
+    "recurrent",
+    "fast_weight",
+    "episodic"
+  ],
+  "seed": 3,
+  "shapley_exact_attribution": {
+    "copy": {
+      "episodic": 0.0,
+      "fast_weight": 0.0,
+      "local": 0.0,
+      "recurrent": 1.0
+    },
+    "fact": {
+      "episodic": 0.37916666666666665,
+      "fast_weight": 0.005208333333333333,
+      "local": -0.0020833333333333333,
+      "recurrent": -0.0010416666666666664
+    },
+    "mood": {
+      "episodic": 0.00833333333333334,
+      "fast_weight": 0.47708333333333336,
+      "local": 0.47708333333333336,
+      "recurrent": 0.0
+    },
+    "xref": {
+      "episodic": 0.17500000000000004,
+      "fast_weight": 0.5,
+      "local": 0.0,
+      "recurrent": 0.0
+    }
+  },
+  "singleton_exact_drop": {
+    "copy": {
+      "episodic": 0.0,
+      "fast_weight": 0.0,
+      "local": 0.0,
+      "recurrent": 1.0
+    },
+    "fact": {
+      "episodic": 0.38125,
+      "fast_weight": 0.0,
+      "local": 0.0,
+      "recurrent": 0.0
+    },
+    "mood": {
+      "episodic": 0.025000000000000022,
+      "fast_weight": 0.4625,
+      "local": 0.4625,
+      "recurrent": 0.0
+    },
+    "xref": {
+      "episodic": 0.17500000000000004,
+      "fast_weight": 0.5,
+      "local": 0.0,
+      "recurrent": 0.0
+    }
+  },
+  "task": "composite_four_path"
+}

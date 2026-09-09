@@ -1,0 +1,264 @@
+{
+  "aggregate": {
+    "path_names": [
+      "local",
+      "recurrent",
+      "fast_weight",
+      "episodic"
+    ],
+    "seed_count": 9,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "shapley_exact_attribution": {
+      "copy": {
+        "episodic": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0,
+          "positive_seed_count": 0
+        },
+        "fast_weight": {
+          "maximum": 0.0,
+          "mean": -0.0032407407407407406,
+          "minimum": -0.029166666666666667,
+          "positive_seed_count": 0
+        },
+        "local": {
+          "maximum": 0.005208333333333308,
+          "mean": 0.0005787037037037009,
+          "minimum": 0.0,
+          "positive_seed_count": 1
+        },
+        "recurrent": {
+          "maximum": 1.0,
+          "mean": 0.9818287037037037,
+          "minimum": 0.925,
+          "positive_seed_count": 9
+        }
+      },
+      "fact": {
+        "episodic": {
+          "maximum": 0.7015625000000001,
+          "mean": 0.38055555555555554,
+          "minimum": 0.1578125,
+          "positive_seed_count": 9
+        },
+        "fast_weight": {
+          "maximum": 0.009895833333333333,
+          "mean": -0.0037037037037037043,
+          "minimum": -0.04166666666666667,
+          "positive_seed_count": 2
+        },
+        "local": {
+          "maximum": 0.0,
+          "mean": -0.008912037037037038,
+          "minimum": -0.06614583333333333,
+          "positive_seed_count": 0
+        },
+        "recurrent": {
+          "maximum": 0.0026041666666666652,
+          "mean": 0.00011574074074074062,
+          "minimum": -0.0010416666666666664,
+          "positive_seed_count": 1
+        }
+      },
+      "mood": {
+        "episodic": {
+          "maximum": 0.22187500000000004,
+          "mean": 0.049421296296296297,
+          "minimum": 0.0,
+          "positive_seed_count": 4
+        },
+        "fast_weight": {
+          "maximum": 1.0,
+          "mean": 0.6369212962962963,
+          "minimum": 0.0,
+          "positive_seed_count": 8
+        },
+        "local": {
+          "maximum": 0.7874999999999999,
+          "mean": 0.30752314814814813,
+          "minimum": 0.0,
+          "positive_seed_count": 6
+        },
+        "recurrent": {
+          "maximum": 0.0052083333333333235,
+          "mean": 0.0005787037037037026,
+          "minimum": 0.0,
+          "positive_seed_count": 1
+        }
+      },
+      "xref": {
+        "episodic": {
+          "maximum": 0.32500000000000007,
+          "mean": 0.18032407407407408,
+          "minimum": 0.05208333333333331,
+          "positive_seed_count": 9
+        },
+        "fast_weight": {
+          "maximum": 0.54375,
+          "mean": 0.2635416666666666,
+          "minimum": 0.0,
+          "positive_seed_count": 5
+        },
+        "local": {
+          "maximum": 0.575,
+          "mean": 0.23032407407407407,
+          "minimum": -0.029166666666666678,
+          "positive_seed_count": 5
+        },
+        "recurrent": {
+          "maximum": 0.0020833333333333277,
+          "mean": 0.00011574074074074001,
+          "minimum": -0.0010416666666666675,
+          "positive_seed_count": 1
+        }
+      }
+    },
+    "singleton_exact_drop": {
+      "copy": {
+        "episodic": {
+          "hurt_seed_count": 0,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0
+        },
+        "fast_weight": {
+          "hurt_seed_count": 0,
+          "maximum": 0.0,
+          "mean": -0.00555555555555556,
+          "minimum": -0.050000000000000044
+        },
+        "local": {
+          "hurt_seed_count": 0,
+          "maximum": 0.0,
+          "mean": -0.0006944444444444543,
+          "minimum": -0.006250000000000089
+        },
+        "recurrent": {
+          "hurt_seed_count": 9,
+          "maximum": 1.0,
+          "mean": 0.9791666666666666,
+          "minimum": 0.91875
+        }
+      },
+      "fact": {
+        "episodic": {
+          "hurt_seed_count": 9,
+          "maximum": 0.70625,
+          "mean": 0.3666666666666667,
+          "minimum": 0.075
+        },
+        "fast_weight": {
+          "hurt_seed_count": 0,
+          "maximum": 0.0,
+          "mean": -0.01180555555555556,
+          "minimum": -0.09375000000000003
+        },
+        "local": {
+          "hurt_seed_count": 0,
+          "maximum": 0.0,
+          "mean": -0.017361111111111115,
+          "minimum": -0.1375
+        },
+        "recurrent": {
+          "hurt_seed_count": 0,
+          "maximum": 0.0,
+          "mean": -0.000694444444444445,
+          "minimum": -0.0062500000000000056
+        }
+      },
+      "mood": {
+        "episodic": {
+          "hurt_seed_count": 3,
+          "maximum": 0.4437500000000001,
+          "mean": 0.09930555555555558,
+          "minimum": 0.0
+        },
+        "fast_weight": {
+          "hurt_seed_count": 8,
+          "maximum": 1.0,
+          "mean": 0.5979166666666667,
+          "minimum": 0.0
+        },
+        "local": {
+          "hurt_seed_count": 5,
+          "maximum": 1.0,
+          "mean": 0.2708333333333333,
+          "minimum": 0.0
+        },
+        "recurrent": {
+          "hurt_seed_count": 0,
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0
+        }
+      },
+      "xref": {
+        "episodic": {
+          "hurt_seed_count": 9,
+          "maximum": 0.32500000000000007,
+          "mean": 0.16736111111111113,
+          "minimum": 0.018749999999999933
+        },
+        "fast_weight": {
+          "hurt_seed_count": 5,
+          "maximum": 0.5437500000000001,
+          "mean": 0.25,
+          "minimum": 0.0
+        },
+        "local": {
+          "hurt_seed_count": 4,
+          "maximum": 0.575,
+          "mean": 0.22499999999999998,
+          "minimum": -0.050000000000000044
+        },
+        "recurrent": {
+          "hurt_seed_count": 1,
+          "maximum": 0.006249999999999978,
+          "mean": 0.000694444444444442,
+          "minimum": 0.0
+        }
+      }
+    }
+  },
+  "all_paired_assay_commands": [
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_copy_local.csv --baseline drop_local --candidate full --metric copy_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_fact_local.csv --baseline drop_local --candidate full --metric fact_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_mood_local.csv --baseline drop_local --candidate full --metric mood_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_xref_local.csv --baseline drop_local --candidate full --metric xref_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_copy_recurrent.csv --baseline drop_recurrent --candidate full --metric copy_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_fact_recurrent.csv --baseline drop_recurrent --candidate full --metric fact_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_mood_recurrent.csv --baseline drop_recurrent --candidate full --metric mood_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_xref_recurrent.csv --baseline drop_recurrent --candidate full --metric xref_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_copy_fast_weight.csv --baseline drop_fast_weight --candidate full --metric copy_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_fact_fast_weight.csv --baseline drop_fast_weight --candidate full --metric fact_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_mood_fast_weight.csv --baseline drop_fast_weight --candidate full --metric mood_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_xref_fast_weight.csv --baseline drop_fast_weight --candidate full --metric xref_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_copy_episodic.csv --baseline drop_episodic --candidate full --metric copy_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_fact_episodic.csv --baseline drop_episodic --candidate full --metric fact_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_mood_episodic.csv --baseline drop_episodic --candidate full --metric mood_exact --direction improved",
+    "py scripts/assay_submit.py runs\\composite_four_path\\all_single_path_pairs\\paired_xref_episodic.csv --baseline drop_episodic --candidate full --metric xref_exact --direction improved"
+  ],
+  "diagnostic_kind": "fixed_router_post_gate_conditional_coablation",
+  "sources": [
+    "runs\\composite_four_path\\seed0_router_dependency.json",
+    "runs\\composite_four_path\\seed1_router_dependency.json",
+    "runs\\composite_four_path\\seed2_router_dependency.json",
+    "runs\\composite_four_path\\seed3_router_dependency.json",
+    "runs\\composite_four_path\\seed4_router_dependency.json",
+    "runs\\composite_four_path\\seed5_router_dependency.json",
+    "runs\\composite_four_path\\seed6_router_dependency.json",
+    "runs\\composite_four_path\\seed7_router_dependency.json",
+    "runs\\composite_four_path\\seed8_router_dependency.json"
+  ]
+}

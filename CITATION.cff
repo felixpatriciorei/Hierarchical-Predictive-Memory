@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this research code, please cite the repository release you used."
+title: "Hierarchical Predictive Memory"
+type: software
+authors:
+  - family-names: "Patricio"
+    given-names: "Felix"
+version: 0.1.0
+date-released: 2026-09-09
+license: MIT
+repository-code: "https://github.com/felixpatriciorei/Hierarchical-Predictive-Memory"

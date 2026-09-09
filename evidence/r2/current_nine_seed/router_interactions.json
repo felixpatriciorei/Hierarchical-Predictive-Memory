@@ -1,0 +1,1130 @@
+{
+  "definition": "joint_loss_minus_sum_single_losses",
+  "diagnostic_kind": "fixed_router_post_gate_conditional_coablation",
+  "seed_count": 9,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "subtasks": {
+    "copy": {
+      "fast_weight+episodic": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 0,
+        "zero_seed_count": 9
+      },
+      "local+episodic": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 0,
+        "zero_seed_count": 9
+      },
+      "local+fast_weight": {
+        "max": 1.1102230246251565e-16,
+        "mean": 1.2335811384723961e-17,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 1.1102230246251565e-16,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 8
+      },
+      "local+recurrent": {
+        "max": 0.006250000000000089,
+        "mean": 0.0006944444444444543,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.006250000000000089,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 8
+      },
+      "recurrent+episodic": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 0,
+        "zero_seed_count": 9
+      },
+      "recurrent+fast_weight": {
+        "max": 0.025000000000000022,
+        "mean": 0.00277777777777778,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.025000000000000022,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 8
+      }
+    },
+    "fact": {
+      "fast_weight+episodic": {
+        "max": 0.09375000000000003,
+        "mean": 0.011111111111111115,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.09375000000000003,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0062500000000000056,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 2,
+        "zero_seed_count": 7
+      },
+      "local+episodic": {
+        "max": 0.15000000000000002,
+        "mean": 0.014583333333333337,
+        "min": -0.025000000000000022,
+        "negative_seed_count": 2,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.012500000000000011,
+            "seed": 2
+          },
+          {
+            "interaction": -0.006249999999999978,
+            "seed": 3
+          },
+          {
+            "interaction": -0.025000000000000022,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.15000000000000002,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 2,
+        "zero_seed_count": 5
+      },
+      "local+fast_weight": {
+        "max": 0.018750000000000017,
+        "mean": 0.0013888888888888933,
+        "min": -0.006249999999999978,
+        "negative_seed_count": 1,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.018750000000000017,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": -0.006249999999999978,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 7
+      },
+      "local+recurrent": {
+        "max": 0.012500000000000011,
+        "mean": 0.00138888888888889,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.012500000000000011,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 8
+      },
+      "recurrent+episodic": {
+        "max": 0.018750000000000003,
+        "mean": 0.0020833333333333337,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.018750000000000003,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 8
+      },
+      "recurrent+fast_weight": {
+        "max": 0.02500000000000001,
+        "mean": 0.0027777777777777788,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.02500000000000001,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 8
+      }
+    },
+    "mood": {
+      "fast_weight+episodic": {
+        "max": 0.025000000000000022,
+        "mean": -0.04930555555555557,
+        "min": -0.4437500000000001,
+        "negative_seed_count": 2,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": -0.025000000000000022,
+            "seed": 3
+          },
+          {
+            "interaction": 0.025000000000000022,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": -0.4437500000000001,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 6
+      },
+      "local+episodic": {
+        "max": 0.0,
+        "mean": -0.05069444444444445,
+        "min": -0.42500000000000004,
+        "negative_seed_count": 3,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": -0.42500000000000004,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": -0.025000000000000022,
+            "seed": 3
+          },
+          {
+            "interaction": -0.006249999999999978,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 0,
+        "zero_seed_count": 6
+      },
+      "local+fast_weight": {
+        "max": 0.5625,
+        "mean": 0.12569444444444444,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.03749999999999998,
+            "seed": 3
+          },
+          {
+            "interaction": 0.5625,
+            "seed": 4
+          },
+          {
+            "interaction": 0.53125,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 3,
+        "zero_seed_count": 6
+      },
+      "local+recurrent": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 0,
+        "zero_seed_count": 9
+      },
+      "recurrent+episodic": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 0,
+        "zero_seed_count": 9
+      },
+      "recurrent+fast_weight": {
+        "max": 0.03749999999999998,
+        "mean": 0.004166666666666664,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.03749999999999998,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.0,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 8
+      }
+    },
+    "xref": {
+      "fast_weight+episodic": {
+        "max": 0.12500000000000006,
+        "mean": 0.024305555555555556,
+        "min": -1.1102230246251565e-16,
+        "negative_seed_count": 1,
+        "per_seed": [
+          {
+            "interaction": 0.08749999999999997,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.12500000000000006,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 0.006250000000000089,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": -1.1102230246251565e-16,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 3,
+        "zero_seed_count": 5
+      },
+      "local+episodic": {
+        "max": 0.050000000000000044,
+        "mean": 0.007638888888888905,
+        "min": 0.0,
+        "negative_seed_count": 0,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.018750000000000044,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 5.551115123125783e-17,
+            "seed": 5
+          },
+          {
+            "interaction": 0.050000000000000044,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 3,
+        "zero_seed_count": 6
+      },
+      "local+fast_weight": {
+        "max": 0.08749999999999997,
+        "mean": 0.009027777777777789,
+        "min": -0.018749999999999933,
+        "negative_seed_count": 1,
+        "per_seed": [
+          {
+            "interaction": 0.08749999999999997,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.012500000000000067,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": -0.018749999999999933,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 2,
+        "zero_seed_count": 6
+      },
+      "local+recurrent": {
+        "max": 0.0,
+        "mean": -0.000694444444444442,
+        "min": -0.006249999999999978,
+        "negative_seed_count": 1,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": -0.006249999999999978,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 0,
+        "zero_seed_count": 8
+      },
+      "recurrent+episodic": {
+        "max": 0.0,
+        "mean": -0.000694444444444442,
+        "min": -0.006249999999999978,
+        "negative_seed_count": 1,
+        "per_seed": [
+          {
+            "interaction": 0.0,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": -0.006249999999999978,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 0,
+        "zero_seed_count": 8
+      },
+      "recurrent+fast_weight": {
+        "max": 5.551115123125783e-17,
+        "mean": -0.001388888888888884,
+        "min": -0.012500000000000011,
+        "negative_seed_count": 1,
+        "per_seed": [
+          {
+            "interaction": -0.012500000000000011,
+            "seed": 0
+          },
+          {
+            "interaction": 0.0,
+            "seed": 1
+          },
+          {
+            "interaction": 0.0,
+            "seed": 2
+          },
+          {
+            "interaction": 0.0,
+            "seed": 3
+          },
+          {
+            "interaction": 0.0,
+            "seed": 4
+          },
+          {
+            "interaction": 0.0,
+            "seed": 5
+          },
+          {
+            "interaction": 5.551115123125783e-17,
+            "seed": 6
+          },
+          {
+            "interaction": 0.0,
+            "seed": 7
+          },
+          {
+            "interaction": 0.0,
+            "seed": 8
+          }
+        ],
+        "positive_seed_count": 1,
+        "zero_seed_count": 7
+      }
+    }
+  }
+}

@@ -1,0 +1,366 @@
+{
+  "audit_status": "pass",
+  "by_num_facts": {
+    "4": {
+      "artifact_audit": {
+        "completed_metrics_count": 6,
+        "orphan_metrics_paths": [],
+        "selected_metrics_paths": [
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M004\\20260821_145649_hpm_lite_v2_aliased_kv_seed20260850\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M004\\20260821_145719_hpm_lite_v2_aliased_kv_seed20260850\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M004\\20260821_145811_hpm_lite_v2_aliased_kv_seed20260851\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M004\\20260821_145843_hpm_lite_v2_aliased_kv_seed20260851\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M004\\20260821_145934_hpm_lite_v2_aliased_kv_seed20260852\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M004\\20260821_150005_hpm_lite_v2_aliased_kv_seed20260852\\metrics.json"
+        ]
+      },
+      "audit_status": "pass",
+      "delta_ste_minus_hard": {
+        "eval_answer_ce": {
+          "maximum": -3.3012406695634127,
+          "mean": -4.061618174519389,
+          "median": -4.123492548428476,
+          "minimum": -4.760121305566281,
+          "positive_seed_count": 0,
+          "seed_count": 3
+        },
+        "eval_answer_exact": {
+          "maximum": 0.7421875,
+          "mean": 0.6572916666666667,
+          "median": 0.65625,
+          "minimum": 0.5734375,
+          "positive_seed_count": 3,
+          "seed_count": 3
+        },
+        "eval_retrieval_top1": {
+          "maximum": 0.71875,
+          "mean": 0.6302083333333334,
+          "median": 0.6390625,
+          "minimum": 0.5328125,
+          "positive_seed_count": 3,
+          "seed_count": 3
+        }
+      },
+      "interpretation": "proof_of_mechanism_only",
+      "per_seed": [
+        {
+          "delta_eval_answer_ce": -4.123492548428476,
+          "delta_eval_answer_exact": 0.65625,
+          "delta_eval_retrieval_margin": 3.380488639324904,
+          "delta_eval_retrieval_top1": 0.6390625,
+          "delta_train_wall_time_sec": 22.057691799998793,
+          "hard_eval_answer_ce": 5.048989504575729,
+          "hard_eval_answer_exact": 0.2796875,
+          "hard_eval_retrieval_margin": -1.432611445337534,
+          "hard_eval_retrieval_top1": 0.296875,
+          "hard_train_wall_time_sec": 30.00396329999967,
+          "pretrain_retrieval_ceiling": 0.4,
+          "pretrain_retrieval_top1": 0.35625,
+          "seed": 20260850,
+          "ste_eval_answer_ce": 0.9254969561472535,
+          "ste_eval_answer_exact": 0.9359375,
+          "ste_eval_retrieval_margin": 1.9478771939873696,
+          "ste_eval_retrieval_top1": 0.9359375,
+          "ste_over_hard_wall_time_ratio": 1.735159271441951,
+          "ste_train_wall_time_sec": 52.06165509999846
+        },
+        {
+          "delta_eval_answer_ce": -3.3012406695634127,
+          "delta_eval_answer_exact": 0.5734375,
+          "delta_eval_retrieval_margin": 2.8445041932165624,
+          "delta_eval_retrieval_top1": 0.5328125,
+          "delta_train_wall_time_sec": 19.9423239000007,
+          "hard_eval_answer_ce": 4.944899481534958,
+          "hard_eval_answer_exact": 0.2859375,
+          "hard_eval_retrieval_margin": -1.3113254941999912,
+          "hard_eval_retrieval_top1": 0.3265625,
+          "hard_train_wall_time_sec": 31.519734499999686,
+          "pretrain_retrieval_ceiling": 0.4,
+          "pretrain_retrieval_top1": 0.24375,
+          "seed": 20260851,
+          "ste_eval_answer_ce": 1.6436588119715452,
+          "ste_eval_answer_exact": 0.859375,
+          "ste_eval_retrieval_margin": 1.533178699016571,
+          "ste_eval_retrieval_top1": 0.859375,
+          "ste_over_hard_wall_time_ratio": 1.6326932703066044,
+          "ste_train_wall_time_sec": 51.46205840000039
+        },
+        {
+          "delta_eval_answer_ce": -4.760121305566281,
+          "delta_eval_answer_exact": 0.7421875,
+          "delta_eval_retrieval_margin": 3.240793649852276,
+          "delta_eval_retrieval_top1": 0.71875,
+          "delta_train_wall_time_sec": 20.404795399999784,
+          "hard_eval_answer_ce": 5.372465133666992,
+          "hard_eval_answer_exact": 0.2234375,
+          "hard_eval_retrieval_margin": -1.3687704429030418,
+          "hard_eval_retrieval_top1": 0.246875,
+          "hard_train_wall_time_sec": 30.5201219999999,
+          "pretrain_retrieval_ceiling": 0.4,
+          "pretrain_retrieval_top1": 0.315625,
+          "seed": 20260852,
+          "ste_eval_answer_ce": 0.6123438281007111,
+          "ste_eval_answer_exact": 0.965625,
+          "ste_eval_retrieval_margin": 1.872023206949234,
+          "ste_eval_retrieval_top1": 0.965625,
+          "ste_over_hard_wall_time_ratio": 1.668568605328637,
+          "ste_train_wall_time_sec": 50.924917399999686
+        }
+      ],
+      "pretraining_retrieval_top1": {
+        "maximum": 0.35625,
+        "mean": 0.30520833333333336
+      },
+      "seed_count": 3,
+      "ste_over_hard_wall_time_ratio": {
+        "maximum": 1.735159271441951,
+        "mean": 1.6788070490257307,
+        "median": 1.668568605328637,
+        "minimum": 1.6326932703066044
+      }
+    },
+    "8": {
+      "artifact_audit": {
+        "completed_metrics_count": 6,
+        "orphan_metrics_paths": [],
+        "selected_metrics_paths": [
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M008\\20260821_150056_hpm_lite_v2_aliased_kv_seed20260850\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M008\\20260821_150135_hpm_lite_v2_aliased_kv_seed20260850\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M008\\20260821_150234_hpm_lite_v2_aliased_kv_seed20260851\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M008\\20260821_150314_hpm_lite_v2_aliased_kv_seed20260851\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M008\\20260821_150417_hpm_lite_v2_aliased_kv_seed20260852\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M008\\20260821_150500_hpm_lite_v2_aliased_kv_seed20260852\\metrics.json"
+        ]
+      },
+      "audit_status": "pass",
+      "delta_ste_minus_hard": {
+        "eval_answer_ce": {
+          "maximum": -2.7848401129245755,
+          "mean": -3.375365957493583,
+          "median": -3.204890800267458,
+          "minimum": -4.136366959288716,
+          "positive_seed_count": 0,
+          "seed_count": 3
+        },
+        "eval_answer_exact": {
+          "maximum": 0.7515625,
+          "mean": 0.6791666666666667,
+          "median": 0.6515625,
+          "minimum": 0.634375,
+          "positive_seed_count": 3,
+          "seed_count": 3
+        },
+        "eval_retrieval_top1": {
+          "maximum": 0.7203125,
+          "mean": 0.6520833333333332,
+          "median": 0.621875,
+          "minimum": 0.6140625,
+          "positive_seed_count": 3,
+          "seed_count": 3
+        }
+      },
+      "interpretation": "proof_of_mechanism_only",
+      "per_seed": [
+        {
+          "delta_eval_answer_ce": -3.204890800267458,
+          "delta_eval_answer_exact": 0.6515625,
+          "delta_eval_retrieval_margin": 4.309438784047961,
+          "delta_eval_retrieval_top1": 0.621875,
+          "delta_train_wall_time_sec": 18.702295200000663,
+          "hard_eval_answer_ce": 5.558304309844971,
+          "hard_eval_answer_exact": 0.140625,
+          "hard_eval_retrieval_margin": -3.2937498539686203,
+          "hard_eval_retrieval_top1": 0.1734375,
+          "hard_train_wall_time_sec": 39.724926900000355,
+          "pretrain_retrieval_ceiling": 0.275,
+          "pretrain_retrieval_top1": 0.24375,
+          "seed": 20260850,
+          "ste_eval_answer_ce": 2.353413509577513,
+          "ste_eval_answer_exact": 0.7921875,
+          "ste_eval_retrieval_margin": 1.015688930079341,
+          "ste_eval_retrieval_top1": 0.7953125,
+          "ste_over_hard_wall_time_ratio": 1.4707949556982192,
+          "ste_train_wall_time_sec": 58.42722210000102
+        },
+        {
+          "delta_eval_answer_ce": -2.7848401129245755,
+          "delta_eval_answer_exact": 0.634375,
+          "delta_eval_retrieval_margin": 6.191620196402074,
+          "delta_eval_retrieval_top1": 0.6140625,
+          "delta_train_wall_time_sec": 21.88520320000316,
+          "hard_eval_answer_ce": 5.710055327415466,
+          "hard_eval_answer_exact": 0.0828125,
+          "hard_eval_retrieval_margin": -5.545079880952835,
+          "hard_eval_retrieval_top1": 0.109375,
+          "hard_train_wall_time_sec": 40.58131989999856,
+          "pretrain_retrieval_ceiling": 0.275,
+          "pretrain_retrieval_top1": 0.178125,
+          "seed": 20260851,
+          "ste_eval_answer_ce": 2.9252152144908905,
+          "ste_eval_answer_exact": 0.7171875,
+          "ste_eval_retrieval_margin": 0.6465403154492378,
+          "ste_eval_retrieval_top1": 0.7234375,
+          "ste_over_hard_wall_time_ratio": 1.5392925428234763,
+          "ste_train_wall_time_sec": 62.46652310000172
+        },
+        {
+          "delta_eval_answer_ce": -4.136366959288716,
+          "delta_eval_answer_exact": 0.7515625,
+          "delta_eval_retrieval_margin": 3.86059331074357,
+          "delta_eval_retrieval_top1": 0.7203125,
+          "delta_train_wall_time_sec": 20.267204100000527,
+          "hard_eval_answer_ce": 5.821399903297424,
+          "hard_eval_answer_exact": 0.1109375,
+          "hard_eval_retrieval_margin": -2.4587007820606233,
+          "hard_eval_retrieval_top1": 0.1421875,
+          "hard_train_wall_time_sec": 43.00444609999977,
+          "pretrain_retrieval_ceiling": 0.275,
+          "pretrain_retrieval_top1": 0.1578125,
+          "seed": 20260852,
+          "ste_eval_answer_ce": 1.685032944008708,
+          "ste_eval_answer_exact": 0.8625,
+          "ste_eval_retrieval_margin": 1.4018925286829471,
+          "ste_eval_retrieval_top1": 0.8625,
+          "ste_over_hard_wall_time_ratio": 1.4712815984857117,
+          "ste_train_wall_time_sec": 63.271650200000295
+        }
+      ],
+      "pretraining_retrieval_top1": {
+        "maximum": 0.24375,
+        "mean": 0.19322916666666667
+      },
+      "seed_count": 3,
+      "ste_over_hard_wall_time_ratio": {
+        "maximum": 1.5392925428234763,
+        "mean": 1.493789699002469,
+        "median": 1.4712815984857117,
+        "minimum": 1.4707949556982192
+      }
+    },
+    "16": {
+      "artifact_audit": {
+        "completed_metrics_count": 6,
+        "orphan_metrics_paths": [],
+        "selected_metrics_paths": [
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M016\\20260821_150603_hpm_lite_v2_aliased_kv_seed20260850\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M016\\20260821_150701_hpm_lite_v2_aliased_kv_seed20260850\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M016\\20260821_150824_hpm_lite_v2_aliased_kv_seed20260851\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M016\\20260821_150922_hpm_lite_v2_aliased_kv_seed20260851\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M016\\20260821_151052_hpm_lite_v2_aliased_kv_seed20260852\\metrics.json",
+          "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale\\M016\\20260821_151151_hpm_lite_v2_aliased_kv_seed20260852\\metrics.json"
+        ]
+      },
+      "audit_status": "pass",
+      "delta_ste_minus_hard": {
+        "eval_answer_ce": {
+          "maximum": -2.39033228456974,
+          "mean": -2.519941895206769,
+          "median": -2.522109133005142,
+          "minimum": -2.6473842680454256,
+          "positive_seed_count": 0,
+          "seed_count": 3
+        },
+        "eval_answer_exact": {
+          "maximum": 0.6515624999999999,
+          "mean": 0.6380208333333334,
+          "median": 0.6484375,
+          "minimum": 0.6140625,
+          "positive_seed_count": 3,
+          "seed_count": 3
+        },
+        "eval_retrieval_top1": {
+          "maximum": 0.6375,
+          "mean": 0.6171875,
+          "median": 0.6328125,
+          "minimum": 0.5812499999999999,
+          "positive_seed_count": 3,
+          "seed_count": 3
+        }
+      },
+      "interpretation": "proof_of_mechanism_only",
+      "per_seed": [
+        {
+          "delta_eval_answer_ce": -2.522109133005142,
+          "delta_eval_answer_exact": 0.6484375,
+          "delta_eval_retrieval_margin": 8.384766309522092,
+          "delta_eval_retrieval_top1": 0.6328125,
+          "delta_train_wall_time_sec": 25.482261999999537,
+          "hard_eval_answer_ce": 5.866762089729309,
+          "hard_eval_answer_exact": 0.034375,
+          "hard_eval_retrieval_margin": -7.574511694908142,
+          "hard_eval_retrieval_top1": 0.053125,
+          "hard_train_wall_time_sec": 57.58135360000051,
+          "pretrain_retrieval_ceiling": 0.2125,
+          "pretrain_retrieval_top1": 0.1515625,
+          "seed": 20260850,
+          "ste_eval_answer_ce": 3.344652956724167,
+          "ste_eval_answer_exact": 0.6828125,
+          "ste_eval_retrieval_margin": 0.8102546146139502,
+          "ste_eval_retrieval_top1": 0.6859375,
+          "ste_over_hard_wall_time_ratio": 1.4425436431560252,
+          "ste_train_wall_time_sec": 83.06361560000005
+        },
+        {
+          "delta_eval_answer_ce": -2.39033228456974,
+          "delta_eval_answer_exact": 0.6140625,
+          "delta_eval_retrieval_margin": 13.724003210291267,
+          "delta_eval_retrieval_top1": 0.5812499999999999,
+          "delta_train_wall_time_sec": 31.331722199998694,
+          "hard_eval_answer_ce": 5.77728818655014,
+          "hard_eval_answer_exact": 0.0234375,
+          "hard_eval_retrieval_margin": -13.007029163837434,
+          "hard_eval_retrieval_top1": 0.065625,
+          "hard_train_wall_time_sec": 58.26533560000098,
+          "pretrain_retrieval_ceiling": 0.2125,
+          "pretrain_retrieval_top1": 0.1125,
+          "seed": 20260851,
+          "ste_eval_answer_ce": 3.3869559019804,
+          "ste_eval_answer_exact": 0.6375,
+          "ste_eval_retrieval_margin": 0.7169740464538336,
+          "ste_eval_retrieval_top1": 0.646875,
+          "ste_over_hard_wall_time_ratio": 1.5377420704326668,
+          "ste_train_wall_time_sec": 89.59705779999967
+        },
+        {
+          "delta_eval_answer_ce": -2.6473842680454256,
+          "delta_eval_answer_exact": 0.6515624999999999,
+          "delta_eval_retrieval_margin": 9.402331270650029,
+          "delta_eval_retrieval_top1": 0.6375,
+          "delta_train_wall_time_sec": 30.746359400001893,
+          "hard_eval_answer_ce": 5.772926640510559,
+          "hard_eval_answer_exact": 0.0265625,
+          "hard_eval_retrieval_margin": -8.672165715694428,
+          "hard_eval_retrieval_top1": 0.0484375,
+          "hard_train_wall_time_sec": 58.73931359999915,
+          "pretrain_retrieval_ceiling": 0.2125,
+          "pretrain_retrieval_top1": 0.1015625,
+          "seed": 20260852,
+          "ste_eval_answer_ce": 3.1255423724651337,
+          "ste_eval_answer_exact": 0.678125,
+          "ste_eval_retrieval_margin": 0.7301655549556016,
+          "ste_eval_retrieval_top1": 0.6859375,
+          "ste_over_hard_wall_time_ratio": 1.5234374989360164,
+          "ste_train_wall_time_sec": 89.48567300000104
+        }
+      ],
+      "pretraining_retrieval_top1": {
+        "maximum": 0.1515625,
+        "mean": 0.121875
+      },
+      "seed_count": 3,
+      "ste_over_hard_wall_time_ratio": {
+        "maximum": 1.5377420704326668,
+        "mean": 1.5012410708415693,
+        "median": 1.5234374989360164,
+        "minimum": 1.4425436431560252
+      }
+    }
+  },
+  "candidate_counts": [
+    4,
+    8,
+    16
+  ],
+  "interpretation": "candidate_set_scale_proof_of_mechanism_only",
+  "run_dir": "C:\\Users\\win10\\Documents\\New project\\HPM-Lite-Memory-Model-working\\runs\\episodic_read_r1_slot_scale"
+}
