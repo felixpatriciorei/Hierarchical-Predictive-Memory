@@ -1,0 +1,67 @@
+{
+  "definitions": {
+    "A0": "maximum adverse aggregate log-probability gap at the first logged checkpoint",
+    "T_discover": "earliest common logged checkpoint where each frozen R2 necessary task/path pair is top-routed in a strict majority of seeds",
+    "d_max": "maximum observed increase in adverse aggregate gap per optimizer step before T_discover",
+    "p_min": "minimum observed whole-sequence mean path probability through T_discover"
+  },
+  "measured": {
+    "A0": 4.352636317218953,
+    "A0_witness": {
+      "gap": 4.352636317218953,
+      "path": "local",
+      "seed": 8
+    },
+    "T_discover": 300,
+    "T_discover_votes": {
+      "copy:recurrent": 9,
+      "fact:episodic": 5,
+      "mood:fast_weight": 8
+    },
+    "d_max": 0.01687028105399182,
+    "d_max_witness": {
+      "drift_per_step": 0.01687028105399182,
+      "from_step": 100,
+      "path": "recurrent",
+      "seed": 7,
+      "to_step": 200
+    },
+    "first_logged_step": 100,
+    "majority_required": 5,
+    "p_min": 0.005850833375006914,
+    "p_min_witness": {
+      "path": "local",
+      "probability": 0.005850833375006914,
+      "seed": 8,
+      "step": 300
+    }
+  },
+  "measurement_statistic": "whole-sequence mean routing probability per path; adverse gap is the log ratio max_competitor_mean_probability / target_mean_probability",
+  "schema_version": "hpm.router_starvation_guard.empirical.v1",
+  "source": {
+    "directory": "runs/composite_four_path",
+    "seed_count": 9,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "sha256_by_file": {
+      "seed0_composite_step_log.csv": "24576a332c2c7a925ef83b95ccaaa25bc87634b988841ac62753598e00ca5172",
+      "seed1_composite_step_log.csv": "a3765d8781389f19df4578a2004d92079c96ac29254bcfa73f4b3b0a3411c23c",
+      "seed2_composite_step_log.csv": "fb48a4861c0aa72e66079bc1108c1d7af1f78a6a1daeb3110eecfe1e4c5d8d43",
+      "seed3_composite_step_log.csv": "cead1b4f05b4e8ef80404182e0999b2d22ca1ccc1f50d1fd10d1286b4cbaed03",
+      "seed4_composite_step_log.csv": "298c65648e4754535a4ada9a665b5a98c5849fe65b67a69c5bae439948a405cd",
+      "seed5_composite_step_log.csv": "93b6efea139d08fc745ffc1ac7c7f0e8f09e70ff85161511554dbe9065db06aa",
+      "seed6_composite_step_log.csv": "036b6eb78886c3339ff540a4e19716cbb22aa081df6c678ad17dee47d569ac53",
+      "seed7_composite_step_log.csv": "656011c812fad1dadb7f6522555e69514370f8a208f845ea4494adb159915497",
+      "seed8_composite_step_log.csv": "6eef16c0810b8c285db2abd6147f2d33561c48a5c47c62ecbf0ab03bcd40f013"
+    }
+  }
+}

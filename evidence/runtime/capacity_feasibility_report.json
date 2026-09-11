@@ -1,0 +1,64 @@
+{
+  "combined_substrate": {
+    "basis": "The fast-weight/delta state and episodic slot table are separate storage substrates. At this workload the episodic required load is 0/16 and the delta load is 6/8 under the measured operational envelope. This is a substrate-capacity conclusion only; it does not assert a trained router-level additive capacity.",
+    "catastrophic_interference_at_intended_load": false,
+    "pass": true
+  },
+  "delta_rule_interference": {
+    "C_delta_epsilon": 8,
+    "at_intended_workload": {
+      "global_min_assoc_cosine": 0.8302103281021118,
+      "mean_error": 0.028569857746333582,
+      "mean_of_trial_mean_cosine": 0.9714301461353898,
+      "mean_of_trial_min_assoc_cosine": 0.919751183129847,
+      "min_trial_mean_cosine": 0.9396535754203796,
+      "n": 6,
+      "worst_trial_mean_error": 0.06034649536013603
+    },
+    "caution": "The repository's declared threshold is on the mean recall cosine of a trial, not on every individual association. At n=6 the worst individual association across all 128 trials had cosine 0.8302, while the worst trial mean was 0.9397.",
+    "d_model": 48,
+    "epsilon_error": 0.1,
+    "first_threshold_violation_n": 9,
+    "headroom_associations": 2,
+    "intended_workload_n": 6,
+    "metric_contract": "per-trial mean recall cosine >= 0.90; safe capacity stops before first trial-level violation",
+    "overwrite_test": {
+      "cosine_to_new": 1.0,
+      "cosine_to_old": 0.12723417580127716
+    },
+    "pass": true,
+    "trials": 128,
+    "utilization_fraction": 0.75
+  },
+  "episodic_bound": {
+    "N_required_exact_facts": 0,
+    "comparison_for_planned_finite_first_run": "0 <= 16",
+    "current_zpoly_evaluator_capacity_semantics": "uncapped/oracle-position diagnostic; episodic_capacity is not explicitly set",
+    "current_zpoly_evaluator_episodic_capacity": null,
+    "finite_M_used_by_existing_M2_capacity_audit": 16,
+    "note": "Capacity passes trivially for this curriculum because it imposes no mandatory long-range exact-fact load. For a finite-capacity real run, pin M=16 explicitly rather than leaving the diagnostic's None/unbounded setting implicit.",
+    "pass": true,
+    "slot_headroom": 16
+  },
+  "overall_gate": {
+    "blocking_shortfall": null,
+    "configuration_note": "Explicitly pin finite episodic M=16 for the real run if the run is meant to be inside this measured finite envelope.",
+    "decision": "PASS",
+    "pass": true,
+    "required_resize_before_first_training": false
+  },
+  "schema_version": "hpm.capacity.first_training.v1",
+  "workload": {
+    "curriculum": "fixed G1-G3-derived matched curriculum used by the 16-seed position test",
+    "domain": "zpoly_simplify_v0",
+    "episodic_requirement_basis": "No task-specific exact record must survive outside the local window: the richest 47-token sequence places the first task-specific expression token 31 positions before the query, inside the 32-token local window. The fixed action ID header is constant across examples and externally restricts output classes, so it is not counted as a per-example exact episodic fact.",
+    "model_geometry": {
+      "block_size": 8,
+      "d_model": 48,
+      "local_window": 32,
+      "max_fast_weight_block_associations_per_sequence": 6,
+      "max_serialized_eval_sequence_tokens": 27,
+      "max_serialized_training_sequence_tokens": 47
+    }
+  }
+}

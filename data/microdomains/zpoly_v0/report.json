@@ -1,0 +1,23 @@
+{
+  "abstractions": {
+    "accepted": 4,
+    "count": 4,
+    "rejected": 0,
+    "total_primitive_steps_saved_per_use": 4
+  },
+  "derivations": {
+    "count": 12,
+    "verified": 12
+  },
+  "domain": "zpoly_simplify_v0",
+  "primitive_rules": [
+    "ADD_ZERO_R",
+    "ADD_ZERO_L",
+    "MUL_ONE_R",
+    "MUL_ONE_L",
+    "MUL_ZERO_R",
+    "MUL_ZERO_L",
+    "DISTRIB_L",
+    "DISTRIB_R"
+  ]
+}

@@ -1,0 +1,249 @@
+--- /mnt/data/hpm_capacity_check/Hierarchical-Predictive-Memory/src/hpm/maturity_contracts.py	2026-09-09 07:35:09.000000000 +0000
++++ /mnt/data/HPM-router-starvation-guard-REPAIR/src/hpm/maturity_contracts.py	2026-09-10 20:23:11.052271658 +0000
+@@ -8,7 +8,7 @@
+ 
+ from dataclasses import dataclass, asdict
+ import math
+-from typing import Any, Dict, Iterable, Mapping, Optional
++from typing import Any, Dict, Iterable, Mapping, Optional, Sequence
+ 
+ 
+ @dataclass(frozen=True)
+@@ -23,6 +23,32 @@
+         return asdict(self)
+ 
+ 
++class RouterStarvationError(RuntimeError):
++    """Raised when the runtime finite-horizon router survival contract fails."""
++
++
++@dataclass(frozen=True)
++class RouterStarvationGuardConfig:
++    """Empirically calibrated runtime guard for mean per-path routing mass."""
++
++    num_paths: int
++    initial_adverse_gap: float
++    max_adverse_gap_drift_per_step: float
++    discovery_horizon: int
++    minimum_probability: float
++
++
++# Empirical calibration from runs/composite_four_path/seed{0..8}_composite_step_log.csv.
++# Reproduce with scripts/measure_router_starvation_guard.py.
++BASELINE_ROUTER_STARVATION_GUARD = RouterStarvationGuardConfig(
++    num_paths=4,
++    initial_adverse_gap=4.352636317218953,
++    max_adverse_gap_drift_per_step=0.01687028105399182,
++    discovery_horizon=300,
++    minimum_probability=0.005850833375006914,
++)
++
++
+ def _finite(name: str, value: float) -> float:
+     value = float(value)
+     if not math.isfinite(value):
+@@ -63,6 +89,86 @@
+     return 1.0 / (1.0 + (k - 1) * math.exp(x))
+ 
+ 
++def enforce_router_starvation_guard(
++    path_probabilities: Sequence[float],
++    *,
++    step: int,
++    config: RouterStarvationGuardConfig,
++    path_names: Optional[Sequence[str]] = None,
++) -> Dict[str, Any]:
++    """Abort if the empirical finite-horizon router survival contract is violated.
++
++    The statistic is mean routing probability per path over the current batch and
++    sequence.  The guard is abort-only: it never clamps, rebalances, or changes
++    gradients.
++    """
++    t = int(step)
++    if t < 0:
++        raise ValueError("step must be non-negative")
++    if config.num_paths < 2:
++        raise ValueError("num_paths must be >= 2")
++    if config.discovery_horizon < 0:
++        raise ValueError("discovery_horizon must be non-negative")
++    p_min = _finite("minimum_probability", config.minimum_probability)
++    if not 0.0 < p_min < 1.0:
++        raise ValueError("minimum_probability must lie in (0, 1)")
++
++    probs = [_finite(f"path_probability[{i}]", p) for i, p in enumerate(path_probabilities)]
++    if len(probs) != config.num_paths:
++        raise ValueError(f"expected {config.num_paths} path probabilities, got {len(probs)}")
++    if any(p < 0.0 or p > 1.0 for p in probs):
++        raise ValueError("path probabilities must lie in [0, 1]")
++    if abs(sum(probs) - 1.0) > 1.0e-4:
++        raise ValueError(f"path probabilities must sum to 1 (got {sum(probs):.9g})")
++
++    names = list(path_names) if path_names is not None else [f"path_{i}" for i in range(config.num_paths)]
++    if len(names) != config.num_paths:
++        raise ValueError("path_names length must match num_paths")
++
++    if t > config.discovery_horizon:
++        return {
++            "active": False,
++            "step": t,
++            "bound": None,
++            "minimum_probability": p_min,
++            "path_probabilities": dict(zip(names, probs)),
++        }
++
++    bound = router_probability_floor(
++        config.num_paths,
++        config.initial_adverse_gap,
++        config.max_adverse_gap_drift_per_step,
++        t,
++    )
++    violations = []
++    for name, probability in zip(names, probs):
++        reasons = []
++        if probability + 1.0e-12 < bound:
++            reasons.append(f"below_dynamic_bound={bound:.9g}")
++        if probability + 1.0e-12 < p_min:
++            reasons.append(f"below_p_min={p_min:.9g}")
++        if reasons:
++            violations.append((name, probability, reasons))
++
++    if violations:
++        detail = "; ".join(
++            f"{name}: p={probability:.9g} ({', '.join(reasons)})"
++            for name, probability, reasons in violations
++        )
++        raise RouterStarvationError(
++            "router starvation guard aborted training at "
++            f"step {t}/{config.discovery_horizon}: {detail}"
++        )
++
++    return {
++        "active": True,
++        "step": t,
++        "bound": bound,
++        "minimum_probability": p_min,
++        "path_probabilities": dict(zip(names, probs)),
++    }
++
++
+ def max_router_gap_drift_for_floor(
+     num_paths: int,
+     initial_adverse_gap: float,
+--- /mnt/data/hpm_capacity_check/Hierarchical-Predictive-Memory/src/hpm/train.py	2026-09-09 07:46:32.000000000 +0000
++++ /mnt/data/HPM-router-starvation-guard-REPAIR/src/hpm/train.py	2026-09-10 20:23:11.052589698 +0000
+@@ -33,6 +33,11 @@
+     router_health_metrics,
+     router_z_loss,
+ )
++from .maturity_contracts import (
++    BASELINE_ROUTER_STARVATION_GUARD,
++    RouterStarvationGuardConfig,
++    enforce_router_starvation_guard,
++)
+ from .model import HpmLiteConfig, HpmLiteModel
+ from .hpm_v2_model import HpmLiteV2Config, HpmLiteV2Model
+ from .utils import ensure_dir, resolve_device, set_seed, str_to_bool, timestamp, write_json
+@@ -248,6 +253,37 @@
+         ),
+     )
+     parser.add_argument(
++        "--router-starvation-guard",
++        type=str_to_bool,
++        default=False,
++        help=(
++            "HPM v2 only: enable the abort-only finite-horizon router starvation guard. "
++            "It monitors mean routing mass per path over the current batch/sequence and aborts "
++            "if any path falls below either the empirical dynamic bound or p_min before the "
++            "discovery horizon. Default false preserves prior runs."
++        ),
++    )
++    parser.add_argument(
++        "--router-starvation-a0",
++        type=float,
++        default=BASELINE_ROUTER_STARVATION_GUARD.initial_adverse_gap,
++    )
++    parser.add_argument(
++        "--router-starvation-d-max",
++        type=float,
++        default=BASELINE_ROUTER_STARVATION_GUARD.max_adverse_gap_drift_per_step,
++    )
++    parser.add_argument(
++        "--router-discovery-horizon",
++        type=int,
++        default=BASELINE_ROUTER_STARVATION_GUARD.discovery_horizon,
++    )
++    parser.add_argument(
++        "--router-p-min",
++        type=float,
++        default=BASELINE_ROUTER_STARVATION_GUARD.minimum_probability,
++    )
++    parser.add_argument(
+         "--lambda-jepa",
+         type=float,
+         default=0.0,
+@@ -1040,6 +1076,21 @@
+     args = args_with_defaults(args)
+     validate_causal_writer_capacity_contract(args)
+     validate_topc_set_coverage_contract(args)
++    router_starvation_guard_enabled = bool(getattr(args, "router_starvation_guard", False))
++    router_starvation_guard_config: Optional[RouterStarvationGuardConfig] = None
++    router_starvation_guard_last: Optional[Dict[str, Any]] = None
++    if router_starvation_guard_enabled:
++        if args.model != "hpm_lite_v2" or getattr(args, "episodic_only", False):
++            raise ValueError(
++                "--router-starvation-guard requires model=hpm_lite_v2 with episodic_only=false"
++            )
++        router_starvation_guard_config = RouterStarvationGuardConfig(
++            num_paths=4,
++            initial_adverse_gap=float(getattr(args, "router_starvation_a0")),
++            max_adverse_gap_drift_per_step=float(getattr(args, "router_starvation_d_max")),
++            discovery_horizon=int(getattr(args, "router_discovery_horizon")),
++            minimum_probability=float(getattr(args, "router_p_min")),
++        )
+     set_seed(args.seed)
+     device = resolve_device(args.device)
+     if args.record_vram:
+@@ -1244,6 +1295,18 @@
+             }
+         lambda_router_entropy = getattr(args, "lambda_router_entropy", 0.0)
+         router_weights = output["retrieval"].get("router_weights")
++        if router_starvation_guard_config is not None:
++            if router_weights is None:
++                raise RuntimeError(
++                    "router starvation guard enabled but model output did not expose router_weights"
++                )
++            mean_path_probabilities = router_weights.detach().mean(dim=(0, 1)).cpu().tolist()
++            router_starvation_guard_last = enforce_router_starvation_guard(
++                mean_path_probabilities,
++                step=step,
++                config=router_starvation_guard_config,
++                path_names=("local", "recurrent", "fast_weight", "episodic"),
++            )
+         if lambda_router_entropy and router_weights is not None:
+             router_entropy = router_entropy_loss(router_weights)
+         else:
+@@ -1590,6 +1653,24 @@
+             "lambda_router_entropy": lambda_router_entropy,
+             "lambda_router_z_loss": lambda_router_z_loss,
+             "router_logit_clamp": getattr(args, "router_logit_clamp", None),
++            "router_starvation_guard": router_starvation_guard_enabled,
++            "router_starvation_a0": (
++                router_starvation_guard_config.initial_adverse_gap
++                if router_starvation_guard_config is not None else None
++            ),
++            "router_starvation_d_max": (
++                router_starvation_guard_config.max_adverse_gap_drift_per_step
++                if router_starvation_guard_config is not None else None
++            ),
++            "router_discovery_horizon": (
++                router_starvation_guard_config.discovery_horizon
++                if router_starvation_guard_config is not None else None
++            ),
++            "router_p_min": (
++                router_starvation_guard_config.minimum_probability
++                if router_starvation_guard_config is not None else None
++            ),
++            "router_starvation_guard_last": router_starvation_guard_last,
+             "lambda_jepa": lambda_jepa,
+             "use_token_jepa_aux": getattr(args, "use_token_jepa_aux", False),
+             "use_jepa_writer_bias": getattr(args, "use_jepa_writer_bias", False),

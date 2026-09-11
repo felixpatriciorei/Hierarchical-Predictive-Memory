@@ -1,0 +1,6468 @@
+{
+  "checker_verified_dataset": true,
+  "completion_conditional_n": 0,
+  "completion_conditional_on_correct_selection": null,
+  "dataset": [
+    {
+      "action_name": "abs_v0_003",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "const": 0
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "z"
+                                  },
+                                  {
+                                    "var": "x"
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "add"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "y"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "z"
+                              },
+                              {
+                                "var": "x"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 1,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "MUL_ONE_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "const": 0
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "const": 1
+                                      },
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "z"
+                                          },
+                                          {
+                                            "var": "x"
+                                          }
+                                        ],
+                                        "op": "mul"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "z"
+                                  },
+                                  {
+                                    "var": "x"
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 8,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "MUL_ONE_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_002",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "var": "z"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "var": "z"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 2,
+      "source_action": "G1_fdca105bee",
+      "source_generation": 1
+    },
+    {
+      "action_name": "ADD_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_000",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "var": "z"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "const": 0
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "y"
+                                  },
+                                  {
+                                    "var": "z"
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 7,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "ADD_ZERO_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "var": "y"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 1,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "ADD_ZERO_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_003",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "args": [
+                          {
+                            "var": "z"
+                          },
+                          {
+                            "var": "x"
+                          }
+                        ],
+                        "op": "mul"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "var": "y"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "z"
+                      },
+                      {
+                        "var": "x"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 4,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "MUL_ONE_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "x"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "var": "z"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 12,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "ADD_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_002",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "y"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "z"
+                              },
+                              {
+                                "var": "x"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "var": "y"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "z"
+                      },
+                      {
+                        "var": "x"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 10,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "MUL_ONE_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_002",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "z"
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "x"
+                                  },
+                                  {
+                                    "var": "y"
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 1
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "z"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "var": "y"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 14,
+      "source_action": "G2_3a054f86f5",
+      "source_generation": 2
+    },
+    {
+      "action_name": "abs_v0_003",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "x"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "x"
+                      },
+                      {
+                        "var": "y"
+                      }
+                    ],
+                    "op": "add"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "var": "x"
+                  },
+                  {
+                    "var": "y"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 0,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "abs_v0_001",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "var": "z"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "var": "x"
+                  },
+                  {
+                    "var": "z"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 5,
+      "source_action": "G1_53acbd59d0",
+      "source_generation": 1
+    },
+    {
+      "action_name": "abs_v0_002",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "x"
+                                          },
+                                          {
+                                            "args": [
+                                              {
+                                                "var": "y"
+                                              },
+                                              {
+                                                "var": "z"
+                                              }
+                                            ],
+                                            "op": "mul"
+                                          }
+                                        ],
+                                        "op": "add"
+                                      },
+                                      {
+                                        "const": 0
+                                      }
+                                    ],
+                                    "op": "add"
+                                  },
+                                  {
+                                    "const": 1
+                                  }
+                                ],
+                                "op": "mul"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "x"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "var": "z"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 9,
+      "source_action": "G3_09436f0950",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_002",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "z"
+                                          },
+                                          {
+                                            "args": [
+                                              {
+                                                "var": "x"
+                                              },
+                                              {
+                                                "var": "y"
+                                              }
+                                            ],
+                                            "op": "mul"
+                                          }
+                                        ],
+                                        "op": "add"
+                                      },
+                                      {
+                                        "const": 0
+                                      }
+                                    ],
+                                    "op": "add"
+                                  },
+                                  {
+                                    "const": 1
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "z"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "x"
+                                      },
+                                      {
+                                        "var": "y"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 11,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "MUL_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_003",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "var": "z"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "var": "z"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "var": "z"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 5,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "MUL_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_003",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "y"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "z"
+                                      },
+                                      {
+                                        "var": "x"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 0
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "var": "y"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 10,
+      "source_action": "G2_3a054f86f5",
+      "source_generation": 2
+    },
+    {
+      "action_name": "abs_v0_000",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "z"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "x"
+                                      },
+                                      {
+                                        "var": "y"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "z"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "var": "y"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 11,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "abs_v0_000",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "var": "y"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 1,
+      "source_action": "G1_53acbd59d0",
+      "source_generation": 1
+    },
+    {
+      "action_name": "abs_v0_002",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "x"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "var": "z"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "mul"
+                              },
+                              {
+                                "const": 0
+                              }
+                            ],
+                            "op": "add"
+                          },
+                          {
+                            "const": 1
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 12,
+      "source_action": "G2_3a054f86f5",
+      "source_generation": 2
+    },
+    {
+      "action_name": "abs_v0_000",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "x"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 0,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "MUL_ONE_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "z"
+                                      },
+                                      {
+                                        "var": "x"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "var": "y"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "z"
+                              },
+                              {
+                                "var": "x"
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "var": "y"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 17,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "abs_v0_000",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "var": "x"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "var": "z"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 9,
+      "source_action": "G1_fdca105bee",
+      "source_generation": 1
+    },
+    {
+      "action_name": "abs_v0_000",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "const": 1
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "const": 0
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "var": "y"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 1,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_001",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "z"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 2,
+      "source_action": "G2_3a054f86f5",
+      "source_generation": 2
+    },
+    {
+      "action_name": "MUL_ONE_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "const": 0
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "const": 1
+                                      },
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "y"
+                                          },
+                                          {
+                                            "args": [
+                                              {
+                                                "var": "z"
+                                              },
+                                              {
+                                                "var": "x"
+                                              }
+                                            ],
+                                            "op": "mul"
+                                          }
+                                        ],
+                                        "op": "add"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "y"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "z"
+                                      },
+                                      {
+                                        "var": "x"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 10,
+      "source_action": "G3_09436f0950",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_001",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "const": 0
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "const": 1
+                                      },
+                                      {
+                                        "args": [
+                                          {
+                                            "args": [
+                                              {
+                                                "var": "y"
+                                              },
+                                              {
+                                                "var": "z"
+                                              }
+                                            ],
+                                            "op": "mul"
+                                          },
+                                          {
+                                            "var": "x"
+                                          }
+                                        ],
+                                        "op": "add"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "var": "z"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "var": "x"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 16,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_003",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "z"
+                                      },
+                                      {
+                                        "const": 0
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "z"
+                                          },
+                                          {
+                                            "var": "x"
+                                          }
+                                        ],
+                                        "op": "mul"
+                                      },
+                                      {
+                                        "var": "y"
+                                      }
+                                    ],
+                                    "op": "add"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "z"
+                                      },
+                                      {
+                                        "var": "x"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "var": "y"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 2,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_000",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "y"
+                                          },
+                                          {
+                                            "var": "z"
+                                          }
+                                        ],
+                                        "op": "mul"
+                                      },
+                                      {
+                                        "const": 1
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "const": 0
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "y"
+                                  },
+                                  {
+                                    "var": "z"
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 7,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "MUL_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_003",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "z"
+                                          },
+                                          {
+                                            "args": [
+                                              {
+                                                "var": "x"
+                                              },
+                                              {
+                                                "var": "y"
+                                              }
+                                            ],
+                                            "op": "mul"
+                                          }
+                                        ],
+                                        "op": "add"
+                                      },
+                                      {
+                                        "const": 0
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "z"
+                                      },
+                                      {
+                                        "var": "x"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "z"
+                                  },
+                                  {
+                                    "var": "x"
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 11,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_002",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "const": 0
+                              }
+                            ],
+                            "op": "add"
+                          },
+                          {
+                            "const": 1
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "x"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 0,
+      "source_action": "G2_3a054f86f5",
+      "source_generation": 2
+    },
+    {
+      "action_name": "abs_v0_001",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "var": "x"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "var": "z"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 9,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "ADD_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_002",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "var": "y"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 1,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "abs_v0_001",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "const": 0
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "const": 1
+                                      },
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "x"
+                                          },
+                                          {
+                                            "var": "y"
+                                          }
+                                        ],
+                                        "op": "add"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "x"
+                                  },
+                                  {
+                                    "var": "y"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 3,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_003",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "y"
+                                          },
+                                          {
+                                            "var": "z"
+                                          }
+                                        ],
+                                        "op": "mul"
+                                      },
+                                      {
+                                        "const": 0
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "y"
+                                          },
+                                          {
+                                            "var": "z"
+                                          }
+                                        ],
+                                        "op": "mul"
+                                      },
+                                      {
+                                        "var": "x"
+                                      }
+                                    ],
+                                    "op": "add"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "var": "z"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "var": "x"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 7,
+      "source_action": "G3_09436f0950",
+      "source_generation": 3
+    },
+    {
+      "action_name": "MUL_ONE_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_002",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "y"
+                          },
+                          {
+                            "var": "z"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "var": "x"
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "var": "z"
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "var": "x"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 16,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "MUL_ONE_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "var": "x"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "var": "z"
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "var": "x"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 16,
+      "source_action": "G1_53acbd59d0",
+      "source_generation": 1
+    },
+    {
+      "action_name": "abs_v0_001",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "z"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "x"
+                                      },
+                                      {
+                                        "var": "y"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "z"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "var": "y"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 11,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "ADD_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_000",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "x"
+                                      },
+                                      {
+                                        "var": "y"
+                                      }
+                                    ],
+                                    "op": "add"
+                                  },
+                                  {
+                                    "const": 0
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "x"
+                                  },
+                                  {
+                                    "var": "y"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 3,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_003",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "var": "y"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "var": "z"
+                      }
+                    ],
+                    "op": "add"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "x"
+                      },
+                      {
+                        "var": "y"
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "var": "z"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 12,
+      "source_action": "G1_53acbd59d0",
+      "source_generation": 1
+    },
+    {
+      "action_name": "ADD_ZERO_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "const": 0
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "x"
+                                      },
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "y"
+                                          },
+                                          {
+                                            "var": "z"
+                                          }
+                                        ],
+                                        "op": "mul"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "x"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "var": "z"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "mul"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 12,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    },
+    {
+      "action_name": "ADD_ZERO_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "y"
+                                  },
+                                  {
+                                    "var": "z"
+                                  }
+                                ],
+                                "op": "mul"
+                              },
+                              {
+                                "var": "x"
+                              }
+                            ],
+                            "op": "add"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "var": "x"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 16,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "ADD_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_000",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "var": "y"
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "var": "y"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 6,
+      "source_action": "G2_251179c478",
+      "source_generation": 2
+    },
+    {
+      "action_name": "ADD_ZERO_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_000",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "add"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "var": "z"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 5,
+      "source_action": "G2_446f17060b",
+      "source_generation": 2
+    },
+    {
+      "action_name": "abs_v0_000",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "var": "z"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "var": "z"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "macro",
+      "payload_index": 2,
+      "source_action": "G1_53acbd59d0",
+      "source_generation": 1
+    },
+    {
+      "action_name": "MUL_ONE_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "var": "x"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "var": "x"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 0,
+      "source_action": "G1_53acbd59d0",
+      "source_generation": 1
+    },
+    {
+      "action_name": "ADD_ZERO_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "z"
+                      },
+                      {
+                        "var": "x"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "var": "z"
+                  },
+                  {
+                    "var": "x"
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 8,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "abs_v0_002",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "y"
+                              },
+                              {
+                                "var": "z"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "var": "x"
+                  },
+                  {
+                    "args": [
+                      {
+                        "var": "y"
+                      },
+                      {
+                        "var": "z"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "mul"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 12,
+      "source_action": "G1_9d04057408",
+      "source_generation": 1
+    },
+    {
+      "action_name": "abs_v0_002",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "y"
+                          },
+                          {
+                            "var": "z"
+                          }
+                        ],
+                        "op": "mul"
+                      },
+                      {
+                        "const": 0
+                      }
+                    ],
+                    "op": "add"
+                  },
+                  {
+                    "const": 1
+                  }
+                ],
+                "op": "mul"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "var": "y"
+                  },
+                  {
+                    "var": "z"
+                  }
+                ],
+                "op": "mul"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 7,
+      "source_action": "G1_fdca105bee",
+      "source_generation": 1
+    },
+    {
+      "action_name": "ADD_ZERO_L",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_001",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "const": 0
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "y"
+                                      },
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "z"
+                                          },
+                                          {
+                                            "var": "x"
+                                          }
+                                        ],
+                                        "op": "mul"
+                                      }
+                                    ],
+                                    "op": "add"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "args": [
+                                  {
+                                    "var": "y"
+                                  },
+                                  {
+                                    "args": [
+                                      {
+                                        "var": "z"
+                                      },
+                                      {
+                                        "var": "x"
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  }
+                                ],
+                                "op": "add"
+                              },
+                              {
+                                "const": 1
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "const": 0
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 0
+              }
+            ],
+            "op": "add"
+          },
+          {
+            "const": 1
+          }
+        ],
+        "op": "mul"
+      },
+      "kind": "primitive",
+      "payload_index": 10,
+      "source_action": "G3_09436f0950",
+      "source_generation": 3
+    },
+    {
+      "action_name": "abs_v0_003",
+      "checker": {
+        "pass": true,
+        "primitive_replay_exact": true,
+        "semantic_equal": true
+      },
+      "expr": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "const": 0
+                              }
+                            ],
+                            "op": "mul"
+                          },
+                          {
+                            "args": [
+                              {
+                                "var": "x"
+                              },
+                              {
+                                "var": "y"
+                              }
+                            ],
+                            "op": "add"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "const": 0
+          },
+          {
+            "args": [
+              {
+                "const": 1
+              },
+              {
+                "args": [
+                  {
+                    "args": [
+                      {
+                        "args": [
+                          {
+                            "var": "x"
+                          },
+                          {
+                            "var": "y"
+                          }
+                        ],
+                        "op": "add"
+                      },
+                      {
+                        "const": 1
+                      }
+                    ],
+                    "op": "mul"
+                  },
+                  {
+                    "const": 0
+                  }
+                ],
+                "op": "add"
+              }
+            ],
+            "op": "mul"
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "macro",
+      "payload_index": 0,
+      "source_action": "G2_3a054f86f5",
+      "source_generation": 2
+    },
+    {
+      "action_name": "MUL_ONE_R",
+      "checker": {
+        "derived_from_verified_macro_expansion": "abs_v0_000",
+        "pass": true
+      },
+      "expr": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "args": [
+                                      {
+                                        "args": [
+                                          {
+                                            "var": "x"
+                                          },
+                                          {
+                                            "var": "z"
+                                          }
+                                        ],
+                                        "op": "add"
+                                      },
+                                      {
+                                        "const": 1
+                                      }
+                                    ],
+                                    "op": "mul"
+                                  },
+                                  {
+                                    "const": 0
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "goal": {
+        "args": [
+          {
+            "args": [
+              {
+                "args": [
+                  {
+                    "const": 0
+                  },
+                  {
+                    "args": [
+                      {
+                        "const": 1
+                      },
+                      {
+                        "args": [
+                          {
+                            "const": 0
+                          },
+                          {
+                            "args": [
+                              {
+                                "const": 1
+                              },
+                              {
+                                "args": [
+                                  {
+                                    "var": "x"
+                                  },
+                                  {
+                                    "var": "z"
+                                  }
+                                ],
+                                "op": "add"
+                              }
+                            ],
+                            "op": "mul"
+                          }
+                        ],
+                        "op": "add"
+                      }
+                    ],
+                    "op": "mul"
+                  }
+                ],
+                "op": "add"
+              },
+              {
+                "const": 1
+              }
+            ],
+            "op": "mul"
+          },
+          {
+            "const": 0
+          }
+        ],
+        "op": "add"
+      },
+      "kind": "primitive",
+      "payload_index": 5,
+      "source_action": "G3_01019de6d0",
+      "source_generation": 3
+    }
+  ],
+  "device": "cpu",
+  "eval_exact": 0.0,
+  "macro_selection_accuracy": 0.0,
+  "protocol": {
+    "batch_size": 32,
+    "block_size": 256,
+    "d_model": 192,
+    "dataset_variable_only": true,
+    "heads": 4,
+    "jepa": false,
+    "lambda_router_z_loss": 0.0,
+    "layers": 2,
+    "learned_writer": true,
+    "learned_writer_teacher_forcing_steps": 0,
+    "lr": 0.0003,
+    "max_seq_len": 2048,
+    "memory_slots": 16,
+    "optimizer": "TinyAdamW",
+    "router_logit_clamp": null,
+    "router_starvation_guard": false,
+    "train_updates": 2000,
+    "weight_decay": 0.01,
+    "window": 256
+  },
+  "router_path_usage": {
+    "episodic": 0.009706974386062939,
+    "fast_weight": 0.09625568322371691,
+    "local": 0.8657485079020262,
+    "recurrent": 0.028288835659623146
+  },
+  "schema_version": "hpm.zpoly.dataset_curve.v1",
+  "seed": 260909,
+  "size": 50,
+  "standard_tasks": [
+    {
+      "first_action": "MUL_ONE_L",
+      "first_action_is_intended": null,
+      "id": "heldout_01_C_then_primitive",
+      "success": false,
+      "trace": [
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L"
+      ]
+    },
+    {
+      "first_action": "abs_v0_000",
+      "first_action_is_intended": null,
+      "id": "heldout_02_A_then_B",
+      "success": false,
+      "trace": [
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000"
+      ]
+    },
+    {
+      "first_action": "ADD_ZERO_L",
+      "first_action_is_intended": null,
+      "id": "heldout_03_C_then_D",
+      "success": false,
+      "trace": [
+        "ADD_ZERO_L",
+        "ADD_ZERO_L",
+        "ADD_ZERO_L",
+        "ADD_ZERO_L",
+        "ADD_ZERO_L",
+        "ADD_ZERO_L",
+        "ADD_ZERO_L",
+        "ADD_ZERO_L"
+      ]
+    },
+    {
+      "first_action": "MUL_ONE_L",
+      "first_action_is_intended": null,
+      "id": "heldout_04_C_then_A",
+      "success": false,
+      "trace": [
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L"
+      ]
+    },
+    {
+      "first_action": "abs_v0_000",
+      "first_action_is_intended": null,
+      "id": "heldout_05_C_then_B",
+      "success": false,
+      "trace": [
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000"
+      ]
+    },
+    {
+      "first_action": "MUL_ZERO_R",
+      "first_action_is_intended": null,
+      "id": "heldout_06_A_then_D",
+      "success": false,
+      "trace": [
+        "MUL_ZERO_R",
+        "ADD_ZERO_R",
+        "ADD_ZERO_R",
+        "ADD_ZERO_R",
+        "ADD_ZERO_R",
+        "ADD_ZERO_R",
+        "ADD_ZERO_R",
+        "ADD_ZERO_R"
+      ]
+    }
+  ],
+  "structural_heldout_exact": 0.0,
+  "structural_tasks": [
+    {
+      "first_action": "MUL_ONE_L",
+      "first_action_is_intended": false,
+      "id": "context_A_at_right_child",
+      "success": false,
+      "trace": [
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L",
+        "MUL_ONE_L"
+      ]
+    },
+    {
+      "first_action": "abs_v0_000",
+      "first_action_is_intended": false,
+      "id": "context_B_at_left_child",
+      "success": false,
+      "trace": [
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000"
+      ]
+    },
+    {
+      "first_action": "MUL_ONE_R",
+      "first_action_is_intended": false,
+      "id": "context_C_at_right_child",
+      "success": false,
+      "trace": [
+        "MUL_ONE_R",
+        "MUL_ONE_R",
+        "MUL_ONE_R",
+        "MUL_ONE_R",
+        "MUL_ONE_R",
+        "MUL_ONE_R",
+        "MUL_ONE_R",
+        "MUL_ONE_R"
+      ]
+    },
+    {
+      "first_action": "abs_v0_000",
+      "first_action_is_intended": false,
+      "id": "context_D_at_right_child",
+      "success": false,
+      "trace": [
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000",
+        "abs_v0_000"
+      ]
+    }
+  ],
+  "train": {
+    "batch_size": 32,
+    "final_train_loss_mean_100": 3.0728650108358125e-06,
+    "jepa": false,
+    "learned_writer": true,
+    "lr": 0.0003,
+    "macro_pool": 360,
+    "macro_rows": 25,
+    "memory_slots": 16,
+    "optimizer": "TinyAdamW",
+    "primitive_pool": 642,
+    "primitive_rows": 25,
+    "router_guard": false,
+    "router_health_log": [
+      {
+        "router_logit_abs_mean": 2.014686107635498,
+        "router_max_path_probability_mean": 0.9176126718521118,
+        "router_path_usage": {
+          "episodic": 0.001909653190523386,
+          "fast_weight": 0.06821347028017044,
+          "local": 0.9176127314567566,
+          "recurrent": 0.012264110147953033
+        },
+        "step": 50,
+        "train_loss": 1.7772518396377563
+      },
+      {
+        "router_logit_abs_mean": 1.584311604499817,
+        "router_max_path_probability_mean": 0.7981841564178467,
+        "router_path_usage": {
+          "episodic": 0.00604389188811183,
+          "fast_weight": 0.14819413423538208,
+          "local": 0.7981841564178467,
+          "recurrent": 0.04757782444357872
+        },
+        "step": 100,
+        "train_loss": 1.0726406574249268
+      },
+      {
+        "router_logit_abs_mean": 1.2119090557098389,
+        "router_max_path_probability_mean": 0.7605776190757751,
+        "router_path_usage": {
+          "episodic": 0.016345705837011337,
+          "fast_weight": 0.11190970242023468,
+          "local": 0.7605775594711304,
+          "recurrent": 0.11116696894168854
+        },
+        "step": 150,
+        "train_loss": 1.1560982465744019
+      },
+      {
+        "router_logit_abs_mean": 1.3907899856567383,
+        "router_max_path_probability_mean": 0.8053497076034546,
+        "router_path_usage": {
+          "episodic": 0.019653504714369774,
+          "fast_weight": 0.0880613848567009,
+          "local": 0.8053496479988098,
+          "recurrent": 0.08693547546863556
+        },
+        "step": 200,
+        "train_loss": 0.5129339694976807
+      },
+      {
+        "router_logit_abs_mean": 1.4064569473266602,
+        "router_max_path_probability_mean": 0.7871262431144714,
+        "router_path_usage": {
+          "episodic": 0.022650225088000298,
+          "fast_weight": 0.08990605920553207,
+          "local": 0.7871263027191162,
+          "recurrent": 0.10031746327877045
+        },
+        "step": 250,
+        "train_loss": 0.6938306093215942
+      },
+      {
+        "router_logit_abs_mean": 1.692814588546753,
+        "router_max_path_probability_mean": 0.8797439336776733,
+        "router_path_usage": {
+          "episodic": 0.020987391471862793,
+          "fast_weight": 0.05726829543709755,
+          "local": 0.8797439336776733,
+          "recurrent": 0.04200034961104393
+        },
+        "step": 300,
+        "train_loss": 0.7789621353149414
+      },
+      {
+        "router_logit_abs_mean": 1.4490090608596802,
+        "router_max_path_probability_mean": 0.8236287236213684,
+        "router_path_usage": {
+          "episodic": 0.029030757024884224,
+          "fast_weight": 0.07068992406129837,
+          "local": 0.8236287832260132,
+          "recurrent": 0.07665057480335236
+        },
+        "step": 350,
+        "train_loss": 0.20369242131710052
+      },
+      {
+        "router_logit_abs_mean": 1.8429526090621948,
+        "router_max_path_probability_mean": 0.9258884191513062,
+        "router_path_usage": {
+          "episodic": 0.012066608294844627,
+          "fast_weight": 0.03915184363722801,
+          "local": 0.9258884191513062,
+          "recurrent": 0.022893140092492104
+        },
+        "step": 400,
+        "train_loss": 0.4247550666332245
+      },
+      {
+        "router_logit_abs_mean": 1.4892535209655762,
+        "router_max_path_probability_mean": 0.8010998368263245,
+        "router_path_usage": {
+          "episodic": 0.027904212474822998,
+          "fast_weight": 0.08231672644615173,
+          "local": 0.789945125579834,
+          "recurrent": 0.09983381628990173
+        },
+        "step": 450,
+        "train_loss": 0.8712754249572754
+      },
+      {
+        "router_logit_abs_mean": 1.5623877048492432,
+        "router_max_path_probability_mean": 0.8218014240264893,
+        "router_path_usage": {
+          "episodic": 0.022385764867067337,
+          "fast_weight": 0.0731869786977768,
+          "local": 0.8158923387527466,
+          "recurrent": 0.08853491395711899
+        },
+        "step": 500,
+        "train_loss": 0.5570205450057983
+      },
+      {
+        "router_logit_abs_mean": 1.6490936279296875,
+        "router_max_path_probability_mean": 0.869985044002533,
+        "router_path_usage": {
+          "episodic": 0.01578599214553833,
+          "fast_weight": 0.06502775847911835,
+          "local": 0.869985044002533,
+          "recurrent": 0.049201156944036484
+        },
+        "step": 550,
+        "train_loss": 0.33128121495246887
+      },
+      {
+        "router_logit_abs_mean": 1.652880311012268,
+        "router_max_path_probability_mean": 0.8561192750930786,
+        "router_path_usage": {
+          "episodic": 0.01676374115049839,
+          "fast_weight": 0.07609699666500092,
+          "local": 0.8561192750930786,
+          "recurrent": 0.05101996660232544
+        },
+        "step": 600,
+        "train_loss": 0.257962167263031
+      },
+      {
+        "router_logit_abs_mean": 1.679162621498108,
+        "router_max_path_probability_mean": 0.8599725365638733,
+        "router_path_usage": {
+          "episodic": 0.01662854105234146,
+          "fast_weight": 0.08780567348003387,
+          "local": 0.8599724769592285,
+          "recurrent": 0.035593315958976746
+        },
+        "step": 650,
+        "train_loss": 0.1708299070596695
+      },
+      {
+        "router_logit_abs_mean": 1.894496202468872,
+        "router_max_path_probability_mean": 0.8492166996002197,
+        "router_path_usage": {
+          "episodic": 0.009227176196873188,
+          "fast_weight": 0.17856162786483765,
+          "local": 0.7976456880569458,
+          "recurrent": 0.014565600082278252
+        },
+        "step": 700,
+        "train_loss": 0.250384658575058
+      },
+      {
+        "router_logit_abs_mean": 1.8755216598510742,
+        "router_max_path_probability_mean": 0.9393730759620667,
+        "router_path_usage": {
+          "episodic": 0.013715403154492378,
+          "fast_weight": 0.025625964626669884,
+          "local": 0.9393730163574219,
+          "recurrent": 0.021285569295287132
+        },
+        "step": 750,
+        "train_loss": 0.2999918460845947
+      },
+      {
+        "router_logit_abs_mean": 1.729824423789978,
+        "router_max_path_probability_mean": 0.9180830717086792,
+        "router_path_usage": {
+          "episodic": 0.018751060590147972,
+          "fast_weight": 0.0324392169713974,
+          "local": 0.9180830717086792,
+          "recurrent": 0.03072665072977543
+        },
+        "step": 800,
+        "train_loss": 0.015144078992307186
+      },
+      {
+        "router_logit_abs_mean": 1.6347341537475586,
+        "router_max_path_probability_mean": 0.8949594497680664,
+        "router_path_usage": {
+          "episodic": 0.027311736717820168,
+          "fast_weight": 0.04229753091931343,
+          "local": 0.8949594497680664,
+          "recurrent": 0.03543132543563843
+        },
+        "step": 850,
+        "train_loss": 0.5423412322998047
+      },
+      {
+        "router_logit_abs_mean": 1.7031161785125732,
+        "router_max_path_probability_mean": 0.9167171716690063,
+        "router_path_usage": {
+          "episodic": 0.015439344570040703,
+          "fast_weight": 0.034341439604759216,
+          "local": 0.9167171716690063,
+          "recurrent": 0.03350203484296799
+        },
+        "step": 900,
+        "train_loss": 0.008950063958764076
+      },
+      {
+        "router_logit_abs_mean": 1.3745410442352295,
+        "router_max_path_probability_mean": 0.8220664858818054,
+        "router_path_usage": {
+          "episodic": 0.04509356617927551,
+          "fast_weight": 0.05772581323981285,
+          "local": 0.8220664262771606,
+          "recurrent": 0.0751141607761383
+        },
+        "step": 950,
+        "train_loss": 0.004648610949516296
+      },
+      {
+        "router_logit_abs_mean": 1.7016050815582275,
+        "router_max_path_probability_mean": 0.9060630798339844,
+        "router_path_usage": {
+          "episodic": 0.01999088190495968,
+          "fast_weight": 0.027447372674942017,
+          "local": 0.9060630798339844,
+          "recurrent": 0.0464986115694046
+        },
+        "step": 1000,
+        "train_loss": 0.0024458200205117464
+      },
+      {
+        "router_logit_abs_mean": 1.809821367263794,
+        "router_max_path_probability_mean": 0.9361302256584167,
+        "router_path_usage": {
+          "episodic": 0.011960864067077637,
+          "fast_weight": 0.03273630514740944,
+          "local": 0.9361302852630615,
+          "recurrent": 0.019172564148902893
+        },
+        "step": 1050,
+        "train_loss": 5.945506018179003e-06
+      },
+      {
+        "router_logit_abs_mean": 1.939039945602417,
+        "router_max_path_probability_mean": 0.9316239953041077,
+        "router_path_usage": {
+          "episodic": 0.015574485063552856,
+          "fast_weight": 0.025978825986385345,
+          "local": 0.9316240549087524,
+          "recurrent": 0.026822693645954132
+        },
+        "step": 1100,
+        "train_loss": 1.2274481377971824e-05
+      },
+      {
+        "router_logit_abs_mean": 1.692260503768921,
+        "router_max_path_probability_mean": 0.9019172787666321,
+        "router_path_usage": {
+          "episodic": 0.022386375814676285,
+          "fast_weight": 0.03668992966413498,
+          "local": 0.9019172787666321,
+          "recurrent": 0.03900645300745964
+        },
+        "step": 1150,
+        "train_loss": 5.192981006985065e-06
+      },
+      {
+        "router_logit_abs_mean": 1.6930162906646729,
+        "router_max_path_probability_mean": 0.9094690084457397,
+        "router_path_usage": {
+          "episodic": 0.020266084000468254,
+          "fast_weight": 0.034661728888750076,
+          "local": 0.909468948841095,
+          "recurrent": 0.03560325875878334
+        },
+        "step": 1200,
+        "train_loss": 5.05144453200046e-06
+      },
+      {
+        "router_logit_abs_mean": 1.8320224285125732,
+        "router_max_path_probability_mean": 0.9214116930961609,
+        "router_path_usage": {
+          "episodic": 0.016422539949417114,
+          "fast_weight": 0.03836141899228096,
+          "local": 0.9214117527008057,
+          "recurrent": 0.023804305121302605
+        },
+        "step": 1250,
+        "train_loss": 5.304724254528992e-06
+      },
+      {
+        "router_logit_abs_mean": 1.8715909719467163,
+        "router_max_path_probability_mean": 0.9367334842681885,
+        "router_path_usage": {
+          "episodic": 0.013354920782148838,
+          "fast_weight": 0.030319128185510635,
+          "local": 0.9367334246635437,
+          "recurrent": 0.019592495635151863
+        },
+        "step": 1300,
+        "train_loss": 5.397867880674312e-06
+      },
+      {
+        "router_logit_abs_mean": 1.7338712215423584,
+        "router_max_path_probability_mean": 0.9177659153938293,
+        "router_path_usage": {
+          "episodic": 0.016241639852523804,
+          "fast_weight": 0.03383416309952736,
+          "local": 0.9177658557891846,
+          "recurrent": 0.032158322632312775
+        },
+        "step": 1350,
+        "train_loss": 8.553148290957324e-06
+      },
+      {
+        "router_logit_abs_mean": 1.7470654249191284,
+        "router_max_path_probability_mean": 0.9226077795028687,
+        "router_path_usage": {
+          "episodic": 0.015939142554998398,
+          "fast_weight": 0.04042598605155945,
+          "local": 0.9226077795028687,
+          "recurrent": 0.021027112379670143
+        },
+        "step": 1400,
+        "train_loss": 7.063070370350033e-06
+      },
+      {
+        "router_logit_abs_mean": 1.5759307146072388,
+        "router_max_path_probability_mean": 0.8992677330970764,
+        "router_path_usage": {
+          "episodic": 0.021363427862524986,
+          "fast_weight": 0.046816445887088776,
+          "local": 0.8992677330970764,
+          "recurrent": 0.032552387565374374
+        },
+        "step": 1450,
+        "train_loss": 3.881730663124472e-06
+      },
+      {
+        "router_logit_abs_mean": 1.6564030647277832,
+        "router_max_path_probability_mean": 0.9073690176010132,
+        "router_path_usage": {
+          "episodic": 0.017731264233589172,
+          "fast_weight": 0.04051332175731659,
+          "local": 0.9073690176010132,
+          "recurrent": 0.034386396408081055
+        },
+        "step": 1500,
+        "train_loss": 5.919434897805331e-06
+      },
+      {
+        "router_logit_abs_mean": 1.7381529808044434,
+        "router_max_path_probability_mean": 0.9121279716491699,
+        "router_path_usage": {
+          "episodic": 0.016289355233311653,
+          "fast_weight": 0.037569765001535416,
+          "local": 0.9121279716491699,
+          "recurrent": 0.03401292860507965
+        },
+        "step": 1550,
+        "train_loss": 5.379277808970073e-06
+      },
+      {
+        "router_logit_abs_mean": 1.6036577224731445,
+        "router_max_path_probability_mean": 0.8995110988616943,
+        "router_path_usage": {
+          "episodic": 0.023345889523625374,
+          "fast_weight": 0.041368819773197174,
+          "local": 0.8995110392570496,
+          "recurrent": 0.03577420860528946
+        },
+        "step": 1600,
+        "train_loss": 3.5054756608587923e-06
+      },
+      {
+        "router_logit_abs_mean": 1.6562223434448242,
+        "router_max_path_probability_mean": 0.8981035351753235,
+        "router_path_usage": {
+          "episodic": 0.02163870632648468,
+          "fast_weight": 0.04564454033970833,
+          "local": 0.8981034755706787,
+          "recurrent": 0.034613240510225296
+        },
+        "step": 1650,
+        "train_loss": 5.1706638259929605e-06
+      },
+      {
+        "router_logit_abs_mean": 1.6991007328033447,
+        "router_max_path_probability_mean": 0.9192869067192078,
+        "router_path_usage": {
+          "episodic": 0.015976328402757645,
+          "fast_weight": 0.03912623971700668,
+          "local": 0.9192869663238525,
+          "recurrent": 0.025610515847802162
+        },
+        "step": 1700,
+        "train_loss": 7.502666448999662e-06
+      },
+      {
+        "router_logit_abs_mean": 1.536651611328125,
+        "router_max_path_probability_mean": 0.9013978242874146,
+        "router_path_usage": {
+          "episodic": 0.019808851182460785,
+          "fast_weight": 0.047336652874946594,
+          "local": 0.9013978242874146,
+          "recurrent": 0.031456686556339264
+        },
+        "step": 1750,
+        "train_loss": 2.8945323720108718e-06
+      },
+      {
+        "router_logit_abs_mean": 1.7116875648498535,
+        "router_max_path_probability_mean": 0.9202600717544556,
+        "router_path_usage": {
+          "episodic": 0.01833634451031685,
+          "fast_weight": 0.03484940528869629,
+          "local": 0.9202600717544556,
+          "recurrent": 0.026554161682724953
+        },
+        "step": 1800,
+        "train_loss": 3.5650787140184548e-06
+      },
+      {
+        "router_logit_abs_mean": 1.752792477607727,
+        "router_max_path_probability_mean": 0.9317436218261719,
+        "router_path_usage": {
+          "episodic": 0.013306993059813976,
+          "fast_weight": 0.036452922970056534,
+          "local": 0.9317436218261719,
+          "recurrent": 0.01849646493792534
+        },
+        "step": 1850,
+        "train_loss": 3.2409923278464703e-06
+      },
+      {
+        "router_logit_abs_mean": 1.544874668121338,
+        "router_max_path_probability_mean": 0.8899837136268616,
+        "router_path_usage": {
+          "episodic": 0.0217991154640913,
+          "fast_weight": 0.048192210495471954,
+          "local": 0.8899837732315063,
+          "recurrent": 0.040024951100349426
+        },
+        "step": 1900,
+        "train_loss": 3.6135074878984597e-06
+      },
+      {
+        "router_logit_abs_mean": 1.6520030498504639,
+        "router_max_path_probability_mean": 0.9183143377304077,
+        "router_path_usage": {
+          "episodic": 0.01875121146440506,
+          "fast_weight": 0.03584066778421402,
+          "local": 0.9183143377304077,
+          "recurrent": 0.027093790471553802
+        },
+        "step": 1950,
+        "train_loss": 2.942962282759254e-06
+      },
+      {
+        "router_logit_abs_mean": 1.5833518505096436,
+        "router_max_path_probability_mean": 0.9012911319732666,
+        "router_path_usage": {
+          "episodic": 0.01920798234641552,
+          "fast_weight": 0.04796783626079559,
+          "local": 0.9012911319732666,
+          "recurrent": 0.03153306245803833
+        },
+        "step": 2000,
+        "train_loss": 3.095700094490894e-06
+      }
+    ],
+    "teacher_forcing_steps": 0,
+    "train_updates": 2000,
+    "wall_seconds": 540.8985761579997,
+    "weight_decay": 0.01
+  }
+}

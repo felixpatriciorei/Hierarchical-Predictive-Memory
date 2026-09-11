@@ -1,0 +1,11 @@
+{
+  "README_REPAIR.txt": "d3098ac4039a2ed80a70343cdd08170ed11cf61708afbc921d0df31d32931d65",
+  "evidence/router_starvation_guard_calibration.json": "95c575130d6e41916d9481f039a751194d0b69a494873e54a44fcc0780b2427e",
+  "evidence/router_starvation_guard_runtime_report.json": "c4aa4c5e535dc49f835f746d519377ea31a277930b372a6b861774919bef4757",
+  "router_guard_src_layout.patch": "2cdb9029c10ac4f46c9541c5d037c5308e155c2393ae5997c95a7ffd5f1f8c6f",
+  "scripts/measure_router_starvation_guard.py": "1c676bc32f6c62bd36bcbf344e6e5b15643a29c2ccc2fd41efa8dd87774170f4",
+  "scripts/run_memory_model.py": "f573c86382264849967fb9a295517e01c2b574fdfcd923a6a89801a604cf2477",
+  "src/hpm/maturity_contracts.py": "24e574cf15e0944c017ec5d7cc676dea0f752209ffee0cd93897f440cc159115",
+  "src/hpm/train.py": "fc13c9d5e0ea7ab52ddc3ac4788f074565a58641b9138cea73d65a98040151fd",
+  "tests/test_router_starvation_guard.py": "a5040731f8b24c28b1dde59771e1aa88b9ef21147d0f3571f68970e67b1d89ba"
+}

@@ -1,15 +1,153 @@
 from __future__ import annotations
 
 import math
+import os
 from dataclasses import dataclass
 from typing import Dict, Optional
 
 import torch
 from torch import nn
+from torch.utils.checkpoint import checkpoint
 
 from .data import ANSWER, FACT, QUERY, VOCAB_SIZE
 from .memory import EpisodicMemory, HebbianMemory
 from .differentiable_topk import differentiable_topk_bias
+
+
+ATTENTION_MEMORY_MODES = {"auto", "speed", "memory_saver"}
+
+
+def estimate_local_attention_peak_bytes(
+    *,
+    batch_size: int,
+    heads: int,
+    chunk_size: int,
+    radius: int,
+    head_dim: int,
+    element_size: int,
+) -> int:
+    """Conservative temporary-memory estimate for one local-attention chunk.
+
+    Counts K/V gathers, the weighted-value intermediate, and score/softmax
+    tensors. It is intentionally conservative; auto mode uses this only to
+    decide whether the full-speed path has comfortable VRAM headroom.
+    """
+    window_tokens = radius + 1
+    vector_terms = 3 * head_dim  # gathered K, gathered V, weighted V
+    scalar_terms = 2  # scores + softmax probabilities
+    return int(
+        batch_size
+        * heads
+        * chunk_size
+        * window_tokens
+        * (vector_terms + scalar_terms)
+        * element_size
+    )
+
+
+def choose_local_attention_memory_policy(
+    *,
+    requested_mode: str,
+    seq_len: int,
+    batch_size: int,
+    heads: int,
+    radius: int,
+    head_dim: int,
+    element_size: int,
+    device_type: str,
+    free_bytes: int | None = None,
+    total_bytes: int | None = None,
+) -> dict[str, int | bool | str | None]:
+    """Choose chunking/checkpointing without changing attention semantics.
+
+    ``auto`` uses actual CUDA memory headroom. Large-memory devices use the
+    original full-speed 512-token chunk with no activation checkpointing.
+    Small-memory devices use a 32-token chunk and checkpoint the chunk.
+    ``speed`` and ``memory_saver`` are explicit overrides.
+    """
+    mode = requested_mode.strip().lower()
+    if mode not in ATTENTION_MEMORY_MODES:
+        allowed = ", ".join(sorted(ATTENTION_MEMORY_MODES))
+        raise ValueError(f"invalid attention memory mode {requested_mode!r}; expected one of: {allowed}")
+
+    full_chunk = max(1, min(512, seq_len))
+    saver_chunk = max(1, min(32, seq_len))
+    estimated_full_peak = estimate_local_attention_peak_bytes(
+        batch_size=batch_size,
+        heads=heads,
+        chunk_size=full_chunk,
+        radius=radius,
+        head_dim=head_dim,
+        element_size=element_size,
+    )
+
+    if mode == "speed":
+        return {
+            "mode": "speed",
+            "chunk_size": full_chunk,
+            "checkpoint": False,
+            "estimated_full_peak_bytes": estimated_full_peak,
+            "backward_reserve_bytes": None,
+            "required_free_for_speed_bytes": None,
+            "free_bytes": free_bytes,
+            "total_bytes": total_bytes,
+        }
+    if mode == "memory_saver":
+        return {
+            "mode": "memory_saver",
+            "chunk_size": saver_chunk,
+            "checkpoint": True,
+            "estimated_full_peak_bytes": estimated_full_peak,
+            "backward_reserve_bytes": None,
+            "required_free_for_speed_bytes": None,
+            "free_bytes": free_bytes,
+            "total_bytes": total_bytes,
+        }
+
+    # CPU has no CUDA VRAM pressure, so avoid checkpoint recompute there.
+    if device_type != "cuda" or free_bytes is None or total_bytes is None:
+        return {
+            "mode": "speed",
+            "chunk_size": full_chunk,
+            "checkpoint": False,
+            "estimated_full_peak_bytes": estimated_full_peak,
+            "backward_reserve_bytes": None,
+            "required_free_for_speed_bytes": None,
+            "free_bytes": free_bytes,
+            "total_bytes": total_bytes,
+        }
+
+    # Full-speed/no-checkpoint attention retains large gather/softmax
+    # intermediates for backward.  A one-chunk forward-scratch estimate alone
+    # is therefore NOT enough: on a 40 GiB A100 the first full-speed local
+    # layer can retain ~12 GiB, making a second full-speed layer push the
+    # backward pass over the edge even though its immediate forward scratch
+    # would fit.
+    #
+    # Auto mode consequently reserves half of physical VRAM for *everything
+    # else* (already-retained activations, other HPM paths, gradients and
+    # backward workspace) and makes the decision from live free memory at each
+    # local-attention layer.  This is intentionally per-layer:
+    #   - 8 GiB-class cards enter memory_saver immediately;
+    #   - a 40 GiB A100 can keep the first layer on the speed path, then switch
+    #     later layers to checkpointing once that retained state is visible in
+    #     free-memory telemetry;
+    #   - substantially larger cards can keep more/all layers on the speed
+    #     path when the actual headroom supports it.
+    backward_reserve = max(estimated_full_peak, int(0.50 * total_bytes))
+    required_free_for_speed = estimated_full_peak + backward_reserve
+    comfortable = required_free_for_speed <= free_bytes
+    chosen = "speed" if comfortable else "memory_saver"
+    return {
+        "mode": chosen,
+        "chunk_size": full_chunk if comfortable else saver_chunk,
+        "checkpoint": not comfortable,
+        "estimated_full_peak_bytes": estimated_full_peak,
+        "backward_reserve_bytes": backward_reserve,
+        "required_free_for_speed_bytes": required_free_for_speed,
+        "free_bytes": free_bytes,
+        "total_bytes": total_bytes,
+    }
 
 
 def make_local_causal_mask(seq_len: int, window: int, device: torch.device | None = None) -> torch.Tensor:
@@ -40,6 +178,19 @@ class LocalCausalSelfAttention(nn.Module):
         qkv = qkv.view(bsz, seq_len, 3, self.heads, self.head_dim).permute(2, 0, 3, 1, 4)
         q, k, v = qkv[0], qkv[1], qkv[2]
 
+        # Exact-equivalent fast path for short sequences whose full causal
+        # prefix fits inside the configured local window (e.g. zpoly).
+        if seq_len <= self.window + 1:
+            scale = 1.0 / math.sqrt(self.head_dim)
+            scores = torch.matmul(q, k.transpose(-2, -1)) * scale
+            causal = torch.tril(torch.ones((seq_len, seq_len), dtype=torch.bool, device=x.device))
+            scores = scores.masked_fill(~causal[None, None, :, :], torch.finfo(scores.dtype).min)
+            attn = torch.softmax(scores, dim=-1)
+            attn = self.dropout(attn)
+            y = torch.matmul(attn, v)
+            y = y.transpose(1, 2).contiguous().view(bsz, seq_len, self.d_model)
+            return self.out(y)
+
         # True sliding-window causal attention.
         #
         # The previous implementation formed a dense [B, H, T, T] score
@@ -50,12 +201,62 @@ class LocalCausalSelfAttention(nn.Module):
         # This chunked gather computes only the last ``window`` keys for each
         # query, so attention memory is O(B * H * T * window), not O(B*H*T*T).
         radius = min(max(int(self.window), 0), max(seq_len - 1, 0))
-        chunk_size = 512
+
+        # Hardware-aware execution policy. This changes only execution memory
+        # behavior, never the attention window or mathematical result.
+        #
+        # Default ``auto``:
+        #   - large-VRAM CUDA devices (e.g. A100 40 GiB for this geometry):
+        #       512-token chunk, NO activation checkpointing
+        #   - small-VRAM CUDA devices (e.g. RTX 4060 8 GiB):
+        #       32-token chunk + activation checkpointing
+        #
+        # Manual override is available through HPM_ATTENTION_MEMORY_MODE with
+        # values auto|speed|memory_saver. scripts/run_memory_model.py exposes
+        # the same choice as --attention-memory-mode.
+        requested_mode = os.environ.get("HPM_ATTENTION_MEMORY_MODE", "auto")
+        free_bytes = total_bytes = None
+        if x.device.type == "cuda":
+            free_bytes, total_bytes = torch.cuda.mem_get_info(x.device)
+        policy = choose_local_attention_memory_policy(
+            requested_mode=requested_mode,
+            seq_len=seq_len,
+            batch_size=bsz,
+            heads=self.heads,
+            radius=radius,
+            head_dim=self.head_dim,
+            element_size=x.element_size(),
+            device_type=x.device.type,
+            free_bytes=free_bytes,
+            total_bytes=total_bytes,
+        )
+        chunk_size = int(policy["chunk_size"])
+        use_checkpoint = bool(policy["checkpoint"])
+
+        if not getattr(self, "_attention_memory_policy_reported", False):
+            device_name = (
+                torch.cuda.get_device_name(x.device) if x.device.type == "cuda" else x.device.type
+            )
+            free_gib = None if free_bytes is None else free_bytes / 1024**3
+            total_gib = None if total_bytes is None else total_bytes / 1024**3
+            peak_gib = int(policy["estimated_full_peak_bytes"]) / 1024**3
+            required = policy.get("required_free_for_speed_bytes")
+            required_gib = None if required is None else int(required) / 1024**3
+            print(
+                "[attention-memory] "
+                f"device={device_name} requested={requested_mode} chosen={policy['mode']} "
+                f"chunk={chunk_size} checkpoint={use_checkpoint} "
+                f"estimated_full_peak_gib={peak_gib:.2f} "
+                f"required_free_for_speed_gib={required_gib if required_gib is not None else 'n/a'} "
+                f"free_gib={free_gib if free_gib is not None else 'n/a'} "
+                f"total_gib={total_gib if total_gib is not None else 'n/a'}"
+            )
+            self._attention_memory_policy_reported = True
+
         outputs = []
         scale = 1.0 / math.sqrt(self.head_dim)
 
-        for start in range(0, seq_len, chunk_size):
-            end = min(seq_len, start + chunk_size)
+        def attend_chunk(q_all: torch.Tensor, k_all: torch.Tensor, v_all: torch.Tensor, start: int, end: int) -> torch.Tensor:
             chunk_len = end - start
             positions = torch.arange(start, end, device=x.device)
             offsets = torch.arange(radius, -1, -1, device=x.device)
@@ -67,22 +268,37 @@ class LocalCausalSelfAttention(nn.Module):
                 bsz, self.heads, chunk_len, radius + 1, self.head_dim
             )
             k_chunk = torch.gather(
-                k.unsqueeze(2).expand(bsz, self.heads, chunk_len, seq_len, self.head_dim),
+                k_all.unsqueeze(2).expand(bsz, self.heads, chunk_len, seq_len, self.head_dim),
                 dim=3,
                 index=gather_index,
             )
             v_chunk = torch.gather(
-                v.unsqueeze(2).expand(bsz, self.heads, chunk_len, seq_len, self.head_dim),
+                v_all.unsqueeze(2).expand(bsz, self.heads, chunk_len, seq_len, self.head_dim),
                 dim=3,
                 index=gather_index,
             )
 
-            q_chunk = q[:, :, start:end, :]
+            q_chunk = q_all[:, :, start:end, :]
             scores = torch.sum(q_chunk.unsqueeze(-2) * k_chunk, dim=-1) * scale
             scores = scores.masked_fill(~valid[None, None, :, :], torch.finfo(scores.dtype).min)
             attn = torch.softmax(scores, dim=-1)
             attn = self.dropout(attn)
-            outputs.append(torch.sum(attn.unsqueeze(-1) * v_chunk, dim=-2))
+            return torch.sum(attn.unsqueeze(-1) * v_chunk, dim=-2)
+
+        for start in range(0, seq_len, chunk_size):
+            end = min(seq_len, start + chunk_size)
+            if use_checkpoint and self.training and torch.is_grad_enabled():
+                # Bind start/end now: checkpoint recomputes this closure later
+                # during backward, after the Python loop has advanced.
+                def chunk_fn(q_in, k_in, v_in, start_=start, end_=end):
+                    return attend_chunk(q_in, k_in, v_in, start_, end_)
+
+                chunk_output = checkpoint(
+                    chunk_fn, q, k, v, use_reentrant=False, preserve_rng_state=True
+                )
+            else:
+                chunk_output = attend_chunk(q, k, v, start, end)
+            outputs.append(chunk_output)
 
         y = torch.cat(outputs, dim=2)
         y = y.transpose(1, 2).contiguous().view(bsz, seq_len, self.d_model)

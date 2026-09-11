@@ -1,0 +1,57 @@
+{
+  "calibration": {
+    "A0": 4.352636317218953,
+    "A0_witness": {
+      "path": "local",
+      "seed": 8,
+      "step": 100
+    },
+    "T_discover": 300,
+    "T_discover_rule": "earliest common checkpoint where COPY/recurrent, MOOD/fast_weight, FACT/episodic are each top-routed in a strict majority of seeds",
+    "T_discover_votes": {
+      "copy:recurrent": 9,
+      "fact:episodic": 5,
+      "mood:fast_weight": 8
+    },
+    "bound_at_T_discover": 2.7198190281483854e-05,
+    "d_max": 0.01687028105399182,
+    "d_max_witness": {
+      "from_step": 100,
+      "path": "recurrent",
+      "seed": 7,
+      "to_step": 200
+    },
+    "p_min": 0.005850833375006914,
+    "p_min_over_bound_ratio": 215.1184808420904,
+    "p_min_witness": {
+      "path": "local",
+      "seed": 8,
+      "step": 300
+    },
+    "source": "nine existing composite step logs, seeds 0..8",
+    "statistic": "whole-sequence mean routing probability per path"
+  },
+  "git_head": "838b23f",
+  "runtime": {
+    "active_through_step": 300,
+    "behavior": "abort-only; no clamping, balancing, renormalization, or gradient modification",
+    "checks": [
+      "p_path_mean >= dynamic bound",
+      "p_path_mean >= p_min"
+    ],
+    "cli_passthrough": "scripts/run_memory_model.py",
+    "wired_into": "hpm_lite.train.run_training"
+  },
+  "schema_version": "hpm.router_starvation_guard.runtime.v1",
+  "strict_m2_note": {
+    "bound_ge_p_min": false,
+    "note": "The empirical worst-case A0+d_max envelope is too loose to prove p_min by itself; direct p_min runtime abort is stricter and remains active."
+  },
+  "tests": {
+    "cli_smoke": "passed with guard enabled",
+    "compileall": "passed",
+    "guard_tests": "5 passed, 0 failed",
+    "relevant_regression_suite": "103 passed, 0 failed",
+    "scoped_whitespace_check": "passed"
+  }
+}

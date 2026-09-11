@@ -1,0 +1,14 @@
+{
+  "G4_candidates_with_G3": 81,
+  "G4_candidates_without_G3": 81,
+  "G4_retained_with_G3": 81,
+  "discovery_tasks": 324,
+  "interpretation": "Raw candidate generation is not exhausted at G4, but G4 no longer depends on G3 under the fixed binary-induction budget: the identical 81 candidate abstractions are discoverable from the lower library without G3. Full four-seed G4 replication was not completed.",
+  "mean_validation_depth_gain": 1.0,
+  "mean_validation_node_gain": 11.666666666666666,
+  "only_with_G3": 0,
+  "same_candidate_set_with_and_without_G3": true,
+  "schema_version": "hpm.constructive_rsi.g4.exploratory.v1",
+  "seed": 260909,
+  "status": "exploratory_single_seed"
+}

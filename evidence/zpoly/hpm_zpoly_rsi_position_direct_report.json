@@ -1,0 +1,6614 @@
+{
+  "aggregate": {
+    "paired_delta_rsi_minus_root": {
+      "hoeffding_one_sided_lb_95": -1.0363734153404083,
+      "mean_delta": 0.1875,
+      "observation_range": [
+        -1.0,
+        1.0
+      ],
+      "seed_deltas": [
+        0.5,
+        0.0,
+        0.5,
+        -0.25
+      ]
+    },
+    "per_macro_successes": {
+      "root_only": {
+        "abs_v0_000": 0,
+        "abs_v0_001": 1,
+        "abs_v0_002": 1,
+        "abs_v0_003": 0
+      },
+      "rsi_direct_matched": {
+        "abs_v0_000": 1,
+        "abs_v0_001": 0,
+        "abs_v0_002": 1,
+        "abs_v0_003": 3
+      }
+    },
+    "root_only": {
+      "final_train_loss_mean_100": [
+        1.04569474618188e-05,
+        2.3243989540873146e-05,
+        5.1176326183366425e-06,
+        1.605246863327636e-05
+      ],
+      "hoeffding_one_sided_lb_95": -0.48693670767020414,
+      "mean_success_rate": 0.125,
+      "seed_success_rates": [
+        0.0,
+        0.25,
+        0.0,
+        0.25
+      ],
+      "successes": 2,
+      "trials": 16
+    },
+    "rsi_direct_matched": {
+      "final_train_loss_mean_100": [
+        6.7590903207559446e-06,
+        0.2343083144181498,
+        1.4974768720890097e-05,
+        1.3787807001663157
+      ],
+      "hoeffding_one_sided_lb_95": -0.29943670767020414,
+      "mean_success_rate": 0.3125,
+      "seed_success_rates": [
+        0.5,
+        0.25,
+        0.5,
+        0.0
+      ],
+      "successes": 5,
+      "trials": 16
+    }
+  },
+  "correction": {
+    "corrected_test": "Goal is exactly the post-macro tree state. One action is evaluated. No primitive action reaches that goal in one step.",
+    "problem_in_previous_position_test": "After a correct nested macro, the old goal still required a second primitive cleanup in an unseen orientation (e.g. 1*x -> x), conflating macro position invariance with primitive generalization."
+  },
+  "domain": "zpoly_simplify_v0",
+  "interpretation": {
+    "important_detail": "The corrected test removes the earlier primitive-cleanup confound; success now means the intended structural macro was selected and applied at the unseen tree position.",
+    "statement": "Verified G1-G3-derived non-root curriculum increased direct nested-macro application from 2/16 to 5/16 on the corrected one-step position test. The paired four-seed Hoeffding lower bound remains below zero, so this is a glimpse, not a certified neural abstraction result.",
+    "status": "partial_positive_not_certified"
+  },
+  "model": "current_four_path_hpm_v2",
+  "per_seed": [
+    {
+      "root_only": {
+        "condition": "root_only",
+        "device": "cpu",
+        "evaluation_wall_clock_seconds": 0.008080938000034621,
+        "exact_one_step_success_rate": 0.0,
+        "final_train_loss_mean_100": 1.04569474618188e-05,
+        "intended_macro_selection_rate": 0.0,
+        "macro_labeled_examples": 12,
+        "primitive_labeled_examples": 12,
+        "rsi_curriculum_metadata": [],
+        "schema_version": "hpm.zpoly.position_direct.v1",
+        "seed": 260909,
+        "tasks": [
+          {
+            "chosen_action": "abs_v0_001",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_000",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_A_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_002",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_001",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "const": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "mul"
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_B_at_left_child"
+          },
+          {
+            "chosen_action": "abs_v0_001",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_002",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "z"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_C_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_001",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_003",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_D_at_right_child"
+          }
+        ],
+        "training_examples": 24,
+        "training_wall_clock_seconds": 17.249845585999992
+      },
+      "rsi_direct_matched": {
+        "condition": "rsi_direct_matched",
+        "device": "cpu",
+        "evaluation_wall_clock_seconds": 0.007324368000013237,
+        "exact_one_step_success_rate": 0.5,
+        "final_train_loss_mean_100": 6.7590903207559446e-06,
+        "intended_macro_selection_rate": 0.5,
+        "macro_labeled_examples": 12,
+        "primitive_labeled_examples": 12,
+        "rsi_curriculum_metadata": [
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260909_m0_g1_2",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_53acbd59d0",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260909_m0_g2_7",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "source_action": "G2_446f17060b",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "z"
+                                            },
+                                            {
+                                              "const": 1
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        },
+                                        {
+                                          "const": 0
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "z"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260909_m0_g3_17",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "source_action": "G3_5bb27b3c1d",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260909_m1_g1_1",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_9d04057408",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "const": 0
+                                },
+                                {
+                                  "args": [
+                                    {
+                                      "const": 1
+                                    },
+                                    {
+                                      "var": "x"
+                                    }
+                                  ],
+                                  "op": "mul"
+                                }
+                              ],
+                              "op": "add"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260909_m1_g2_3",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G2_251179c478",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "const": 0
+                                        },
+                                        {
+                                          "args": [
+                                            {
+                                              "const": 1
+                                            },
+                                            {
+                                              "var": "x"
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260909_m1_g3_2",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G3_53e4f8075d",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "y"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "y"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260909_m2_g1_1",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_9d04057408",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260909_m2_g2_8",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "source_action": "G2_b61012b4f1",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "x"
+                                            },
+                                            {
+                                              "const": 0
+                                            }
+                                          ],
+                                          "op": "add"
+                                        },
+                                        {
+                                          "const": 1
+                                        }
+                                      ],
+                                      "op": "mul"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260909_m2_g3_19",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "source_action": "G3_ce88d18fa0",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "y"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260909_m3_g1_2",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_53acbd59d0",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "var": "y"
+                                }
+                              ],
+                              "op": "add"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "y"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260909_m3_g2_1",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G2_668fc5a217",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "x"
+                                            },
+                                            {
+                                              "const": 0
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        },
+                                        {
+                                          "var": "y"
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "y"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260909_m3_g3_6",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G3_eeee87d0c6",
+            "source_generation": 3
+          }
+        ],
+        "schema_version": "hpm.zpoly.position_direct.v1",
+        "seed": 260909,
+        "tasks": [
+          {
+            "chosen_action": "abs_v0_000",
+            "chosen_is_intended": true,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_000",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": true,
+            "task_id": "context_A_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_003",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_001",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "const": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "mul"
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_B_at_left_child"
+          },
+          {
+            "chosen_action": "abs_v0_003",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_002",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "z"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_C_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_003",
+            "chosen_is_intended": true,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_003",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": true,
+            "task_id": "context_D_at_right_child"
+          }
+        ],
+        "training_examples": 24,
+        "training_wall_clock_seconds": 11.910436024999967
+      },
+      "seed": 260909
+    },
+    {
+      "root_only": {
+        "condition": "root_only",
+        "device": "cpu",
+        "evaluation_wall_clock_seconds": 0.009482377999916025,
+        "exact_one_step_success_rate": 0.25,
+        "final_train_loss_mean_100": 2.3243989540873146e-05,
+        "intended_macro_selection_rate": 0.25,
+        "macro_labeled_examples": 12,
+        "primitive_labeled_examples": 12,
+        "rsi_curriculum_metadata": [],
+        "schema_version": "hpm.zpoly.position_direct.v1",
+        "seed": 260910,
+        "tasks": [
+          {
+            "chosen_action": "MUL_ONE_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_000",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_A_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_001",
+            "chosen_is_intended": true,
+            "goal": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_001",
+            "post_action": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "const": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "mul"
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "success": true,
+            "task_id": "context_B_at_left_child"
+          },
+          {
+            "chosen_action": "abs_v0_001",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_002",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "z"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_C_at_right_child"
+          },
+          {
+            "chosen_action": "MUL_ONE_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_003",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_D_at_right_child"
+          }
+        ],
+        "training_examples": 24,
+        "training_wall_clock_seconds": 16.666804606999904
+      },
+      "rsi_direct_matched": {
+        "condition": "rsi_direct_matched",
+        "device": "cpu",
+        "evaluation_wall_clock_seconds": 0.007778972999972211,
+        "exact_one_step_success_rate": 0.25,
+        "final_train_loss_mean_100": 0.2343083144181498,
+        "intended_macro_selection_rate": 0.25,
+        "macro_labeled_examples": 12,
+        "primitive_labeled_examples": 12,
+        "rsi_curriculum_metadata": [
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260910_m0_g1_2",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_53acbd59d0",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260910_m0_g2_7",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "source_action": "G2_446f17060b",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "z"
+                                            },
+                                            {
+                                              "const": 1
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        },
+                                        {
+                                          "const": 0
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "z"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260910_m0_g3_17",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "source_action": "G3_5bb27b3c1d",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260910_m1_g1_1",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_9d04057408",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "const": 0
+                                },
+                                {
+                                  "args": [
+                                    {
+                                      "const": 1
+                                    },
+                                    {
+                                      "var": "x"
+                                    }
+                                  ],
+                                  "op": "mul"
+                                }
+                              ],
+                              "op": "add"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260910_m1_g2_3",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G2_251179c478",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "const": 0
+                                        },
+                                        {
+                                          "args": [
+                                            {
+                                              "const": 1
+                                            },
+                                            {
+                                              "var": "x"
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260910_m1_g3_2",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G3_53e4f8075d",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "y"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "y"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260910_m2_g1_1",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_9d04057408",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260910_m2_g2_8",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "source_action": "G2_b61012b4f1",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "x"
+                                            },
+                                            {
+                                              "const": 0
+                                            }
+                                          ],
+                                          "op": "add"
+                                        },
+                                        {
+                                          "const": 1
+                                        }
+                                      ],
+                                      "op": "mul"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260910_m2_g3_19",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "source_action": "G3_ce88d18fa0",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "y"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260910_m3_g1_2",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_53acbd59d0",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "var": "y"
+                                }
+                              ],
+                              "op": "add"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "y"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260910_m3_g2_1",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G2_668fc5a217",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "x"
+                                            },
+                                            {
+                                              "const": 0
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        },
+                                        {
+                                          "var": "y"
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "y"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260910_m3_g3_6",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G3_eeee87d0c6",
+            "source_generation": 3
+          }
+        ],
+        "schema_version": "hpm.zpoly.position_direct.v1",
+        "seed": 260910,
+        "tasks": [
+          {
+            "chosen_action": "MUL_ONE_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_000",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_A_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_003",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_001",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "const": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "mul"
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_B_at_left_child"
+          },
+          {
+            "chosen_action": "ADD_ZERO_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_002",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "var": "z"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "z"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_C_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_003",
+            "chosen_is_intended": true,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_003",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": true,
+            "task_id": "context_D_at_right_child"
+          }
+        ],
+        "training_examples": 24,
+        "training_wall_clock_seconds": 17.426035484000067
+      },
+      "seed": 260910
+    },
+    {
+      "root_only": {
+        "condition": "root_only",
+        "device": "cpu",
+        "evaluation_wall_clock_seconds": 0.009339502999978322,
+        "exact_one_step_success_rate": 0.0,
+        "final_train_loss_mean_100": 5.1176326183366425e-06,
+        "intended_macro_selection_rate": 0.0,
+        "macro_labeled_examples": 12,
+        "primitive_labeled_examples": 12,
+        "rsi_curriculum_metadata": [],
+        "schema_version": "hpm.zpoly.position_direct.v1",
+        "seed": 260911,
+        "tasks": [
+          {
+            "chosen_action": "MUL_ONE_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_000",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_A_at_right_child"
+          },
+          {
+            "chosen_action": "MUL_ONE_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_001",
+            "post_action": {
+              "args": [
+                {
+                  "const": 0
+                },
+                {
+                  "args": [
+                    {
+                      "const": 1
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "add"
+            },
+            "start": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "const": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "mul"
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_B_at_left_child"
+          },
+          {
+            "chosen_action": "MUL_ONE_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_002",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "var": "z"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "z"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_C_at_right_child"
+          },
+          {
+            "chosen_action": "MUL_ONE_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_003",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_D_at_right_child"
+          }
+        ],
+        "training_examples": 24,
+        "training_wall_clock_seconds": 16.139143536999995
+      },
+      "rsi_direct_matched": {
+        "condition": "rsi_direct_matched",
+        "device": "cpu",
+        "evaluation_wall_clock_seconds": 0.008096751000039148,
+        "exact_one_step_success_rate": 0.5,
+        "final_train_loss_mean_100": 1.4974768720890097e-05,
+        "intended_macro_selection_rate": 0.5,
+        "macro_labeled_examples": 12,
+        "primitive_labeled_examples": 12,
+        "rsi_curriculum_metadata": [
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260911_m0_g1_2",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_1f463b0dcc",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "z"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "z"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260911_m0_g2_3",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "source_action": "G2_86a9dae446",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "z"
+                                            },
+                                            {
+                                              "const": 1
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        },
+                                        {
+                                          "const": 0
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "z"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260911_m0_g3_14",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "source_action": "G3_ade3994d85",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260911_m1_g1_1",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_f695daf5e9",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "const": 0
+                                },
+                                {
+                                  "args": [
+                                    {
+                                      "const": 1
+                                    },
+                                    {
+                                      "var": "x"
+                                    }
+                                  ],
+                                  "op": "mul"
+                                }
+                              ],
+                              "op": "add"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260911_m1_g2_6",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G2_1bbd6f0a11",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "const": 0
+                                        },
+                                        {
+                                          "args": [
+                                            {
+                                              "const": 1
+                                            },
+                                            {
+                                              "var": "x"
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260911_m1_g3_26",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G3_2443c9af51",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "y"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "y"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260911_m2_g1_1",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_f695daf5e9",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "z"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "z"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260911_m2_g2_4",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "source_action": "G2_67cb83e324",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "z"
+                                            },
+                                            {
+                                              "const": 0
+                                            }
+                                          ],
+                                          "op": "add"
+                                        },
+                                        {
+                                          "const": 1
+                                        }
+                                      ],
+                                      "op": "mul"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "z"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260911_m2_g3_9",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "source_action": "G3_29f884940e",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "y"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260911_m3_g1_2",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_1f463b0dcc",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "var": "y"
+                                }
+                              ],
+                              "op": "add"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "y"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260911_m3_g2_7",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G2_37cbdee5b2",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "x"
+                                            },
+                                            {
+                                              "const": 0
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        },
+                                        {
+                                          "var": "y"
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "y"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260911_m3_g3_24",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G3_1f3eebcd03",
+            "source_generation": 3
+          }
+        ],
+        "schema_version": "hpm.zpoly.position_direct.v1",
+        "seed": 260911,
+        "tasks": [
+          {
+            "chosen_action": "abs_v0_001",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_000",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_A_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_000",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_001",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "const": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "mul"
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_B_at_left_child"
+          },
+          {
+            "chosen_action": "abs_v0_002",
+            "chosen_is_intended": true,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_002",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "z"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": true,
+            "task_id": "context_C_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_003",
+            "chosen_is_intended": true,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_003",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": true,
+            "task_id": "context_D_at_right_child"
+          }
+        ],
+        "training_examples": 24,
+        "training_wall_clock_seconds": 16.66219778800007
+      },
+      "seed": 260911
+    },
+    {
+      "root_only": {
+        "condition": "root_only",
+        "device": "cpu",
+        "evaluation_wall_clock_seconds": 0.007845574000043598,
+        "exact_one_step_success_rate": 0.25,
+        "final_train_loss_mean_100": 1.605246863327636e-05,
+        "intended_macro_selection_rate": 0.25,
+        "macro_labeled_examples": 12,
+        "primitive_labeled_examples": 12,
+        "rsi_curriculum_metadata": [],
+        "schema_version": "hpm.zpoly.position_direct.v1",
+        "seed": 260912,
+        "tasks": [
+          {
+            "chosen_action": "abs_v0_002",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_000",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_A_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_002",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_001",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "const": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "mul"
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_B_at_left_child"
+          },
+          {
+            "chosen_action": "abs_v0_002",
+            "chosen_is_intended": true,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_002",
+            "post_action": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "z"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": true,
+            "task_id": "context_C_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_002",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_003",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_D_at_right_child"
+          }
+        ],
+        "training_examples": 24,
+        "training_wall_clock_seconds": 17.171953642000062
+      },
+      "rsi_direct_matched": {
+        "condition": "rsi_direct_matched",
+        "device": "cpu",
+        "evaluation_wall_clock_seconds": 0.0073485950000531375,
+        "exact_one_step_success_rate": 0.0,
+        "final_train_loss_mean_100": 1.3787807001663157,
+        "intended_macro_selection_rate": 0.0,
+        "macro_labeled_examples": 12,
+        "primitive_labeled_examples": 12,
+        "rsi_curriculum_metadata": [
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260912_m0_g1_2",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_53acbd59d0",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260912_m0_g2_7",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "source_action": "G2_446f17060b",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_000",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "z"
+                                            },
+                                            {
+                                              "const": 1
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        },
+                                        {
+                                          "const": 0
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "z"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260912_m0_g3_17",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "source_action": "G3_5bb27b3c1d",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "x"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260912_m1_g1_1",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_9d04057408",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "const": 0
+                                },
+                                {
+                                  "args": [
+                                    {
+                                      "const": 1
+                                    },
+                                    {
+                                      "var": "x"
+                                    }
+                                  ],
+                                  "op": "mul"
+                                }
+                              ],
+                              "op": "add"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260912_m1_g2_3",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G2_251179c478",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_001",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "const": 0
+                                        },
+                                        {
+                                          "args": [
+                                            {
+                                              "const": 1
+                                            },
+                                            {
+                                              "var": "x"
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260912_m1_g3_2",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G3_53e4f8075d",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "y"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "y"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260912_m2_g1_1",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_9d04057408",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "var": "x"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260912_m2_g2_8",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "source_action": "G2_b61012b4f1",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_002",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "x"
+                                            },
+                                            {
+                                              "const": 0
+                                            }
+                                          ],
+                                          "op": "add"
+                                        },
+                                        {
+                                          "const": 1
+                                        }
+                                      ],
+                                      "op": "mul"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "const": 0
+                        },
+                        {
+                          "args": [
+                            {
+                              "const": 1
+                            },
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 1
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "const": 0
+                                }
+                              ],
+                              "op": "add"
+                            }
+                          ],
+                          "op": "mul"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260912_m2_g3_19",
+            "macro_path": [
+              0,
+              0,
+              1,
+              1,
+              0,
+              0
+            ],
+            "source_action": "G3_ce88d18fa0",
+            "source_generation": 3
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "x"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "var": "y"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260912_m3_g1_2",
+            "macro_path": [
+              0,
+              0
+            ],
+            "source_action": "G1_53acbd59d0",
+            "source_generation": 1
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "x"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "mul"
+                                },
+                                {
+                                  "var": "y"
+                                }
+                              ],
+                              "op": "add"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "var": "y"
+                            },
+                            {
+                              "const": 1
+                            }
+                          ],
+                          "op": "mul"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                },
+                {
+                  "const": 0
+                }
+              ],
+              "op": "add"
+            },
+            "id": "rsi_seed260912_m3_g2_1",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G2_668fc5a217",
+            "source_generation": 2
+          },
+          {
+            "action_name": "abs_v0_003",
+            "expr": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "args": [
+                                        {
+                                          "args": [
+                                            {
+                                              "var": "x"
+                                            },
+                                            {
+                                              "const": 0
+                                            }
+                                          ],
+                                          "op": "mul"
+                                        },
+                                        {
+                                          "var": "y"
+                                        }
+                                      ],
+                                      "op": "add"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "goal": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "args": [
+                            {
+                              "args": [
+                                {
+                                  "args": [
+                                    {
+                                      "var": "y"
+                                    },
+                                    {
+                                      "const": 0
+                                    }
+                                  ],
+                                  "op": "add"
+                                },
+                                {
+                                  "const": 1
+                                }
+                              ],
+                              "op": "mul"
+                            },
+                            {
+                              "const": 0
+                            }
+                          ],
+                          "op": "add"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "id": "rsi_seed260912_m3_g3_6",
+            "macro_path": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "source_action": "G3_eeee87d0c6",
+            "source_generation": 3
+          }
+        ],
+        "schema_version": "hpm.zpoly.position_direct.v1",
+        "seed": 260912,
+        "tasks": [
+          {
+            "chosen_action": "abs_v0_001",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "x"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_000",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 1
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "const": 0
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_A_at_right_child"
+          },
+          {
+            "chosen_action": "abs_v0_003",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "var": "y"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_001",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "args": [
+                    {
+                      "const": 0
+                    },
+                    {
+                      "args": [
+                        {
+                          "const": 1
+                        },
+                        {
+                          "var": "y"
+                        }
+                      ],
+                      "op": "mul"
+                    }
+                  ],
+                  "op": "add"
+                },
+                {
+                  "const": 1
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_B_at_left_child"
+          },
+          {
+            "chosen_action": "abs_v0_001",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "z"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_002",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "z"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "add"
+                    },
+                    {
+                      "const": 1
+                    }
+                  ],
+                  "op": "mul"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_C_at_right_child"
+          },
+          {
+            "chosen_action": "MUL_ONE_R",
+            "chosen_is_intended": false,
+            "goal": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "var": "y"
+                }
+              ],
+              "op": "mul"
+            },
+            "intended_macro": "abs_v0_003",
+            "post_action": null,
+            "start": {
+              "args": [
+                {
+                  "const": 1
+                },
+                {
+                  "args": [
+                    {
+                      "args": [
+                        {
+                          "var": "x"
+                        },
+                        {
+                          "const": 0
+                        }
+                      ],
+                      "op": "mul"
+                    },
+                    {
+                      "var": "y"
+                    }
+                  ],
+                  "op": "add"
+                }
+              ],
+              "op": "mul"
+            },
+            "success": false,
+            "task_id": "context_D_at_right_child"
+          }
+        ],
+        "training_examples": 24,
+        "training_wall_clock_seconds": 12.753711277999969
+      },
+      "seed": 260912
+    }
+  ],
+  "protocol": {
+    "label_counts_per_condition": {
+      "macro": 12,
+      "primitive": 12
+    },
+    "root_only": "Original 12 root macro examples + 12 primitive intermediate examples.",
+    "rsi_direct_matched": "Same 12 primitive examples; replace the 12 root macro examples with 12 non-root examples generated from verified G1/G2/G3 contexts: one per macro per generation. Each target is the exact one-step post-macro state.",
+    "train_updates": 1200,
+    "training_examples_per_condition": 24,
+    "unchanged": [
+      "architecture",
+      "action space",
+      "optimizer",
+      "learning rate",
+      "seed pairing",
+      "update budget",
+      "held-out start trees",
+      "macro execution semantics"
+    ]
+  },
+  "schema_version": "hpm.zpoly.rsi_position_direct.aggregate.v1",
+  "seeds": [
+    260909,
+    260910,
+    260911,
+    260912
+  ]
+}
